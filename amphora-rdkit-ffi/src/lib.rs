@@ -161,6 +161,22 @@ pub fn molecule_facts(input: &str) -> Result<MoleculeFactsV1, ChemistryError> {
     }
 }
 
+/// Attest that a MoleculeFactsV1 is exactly what the pinned RDKit backend
+/// produces for its own declared canonical SMILES. Every numeric field
+/// (molecular weight, oxirane count, reactive amine-hydrogen count, the
+/// structure hash, ...) is re-derived from the structure and compared, so a
+/// caller cannot assert values RDKit never computed (T-05). Backend absent or
+/// version-mismatched -> Err (fail closed); non-canonical or fabricated facts
+/// -> Err(InvalidFactsRecord).
+pub fn attest_molecule_facts(facts: &MoleculeFactsV1) -> Result<(), ChemistryError> {
+    let recomputed = molecule_facts(&facts.canonical_isomeric_smiles)?;
+    if &recomputed == facts {
+        Ok(())
+    } else {
+        Err(ChemistryError::InvalidFactsRecord)
+    }
+}
+
 /// Execute one host-authorized reaction SMARTS against defined reactants.
 /// Candidate input cannot provide the reaction SMARTS through this API.
 pub fn execute_reaction(

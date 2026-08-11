@@ -342,6 +342,8 @@ pub enum EquivalentBalanceError {
     InvalidQuantity,
     #[error("molecule facts contain a nonfinite or nonpositive molecular weight")]
     InvalidMolecularWeight,
+    #[error("molecule facts are not attested by recomputation on the pinned RDKit backend")]
+    FactsNotHostAttested,
 }
 
 impl EquivalentBalanceV1 {
@@ -352,6 +354,21 @@ impl EquivalentBalanceV1 {
         equivalent_ratio: f64,
     ) -> Result<Self, EquivalentBalanceError> {
         use amphora_rdkit_ffi::{REACTIVE_ONTOLOGY_VERSION, REQUIRED_RDKIT_VERSION};
+
+        // T-05: attest each fact record by recomputing it on the pinned RDKit
+        // backend and requiring full-struct equality. Self-asserted provenance
+        // strings are not evidence; only facts RDKit actually produces for the
+        // declared structure are admitted. Backend absent -> Toolkit (fail
+        // closed); fabricated/non-canonical -> FactsNotHostAttested.
+        for facts in [resin, hardener] {
+            amphora_rdkit_ffi::attest_molecule_facts(facts).map_err(|error| match error {
+                amphora_rdkit_ffi::ChemistryError::Unavailable
+                | amphora_rdkit_ffi::ChemistryError::VersionMismatch(_) => {
+                    EquivalentBalanceError::Toolkit
+                }
+                _ => EquivalentBalanceError::FactsNotHostAttested,
+            })?;
+        }
 
         for facts in [resin, hardener] {
             if facts.schema != "amphora.molecule-facts.v1"
@@ -2865,24 +2882,27 @@ mod tests {
     }
 
     #[test]
-    fn equivalent_balance_uses_only_host_molecule_facts_and_rejects_zero_groups() {
+    #[cfg(not(feature = "rdkit"))]
+    fn equivalent_balance_fails_closed_without_pinned_backend() {
+        // Without the pinned RDKit backend no fact record can be attested by
+        // recomputation, so the balance refuses to compute -- fail closed (T-05).
         use amphora_rdkit_ffi::{
             MoleculeFactsV1, ReactiveFlagsV1, ToolkitProvenanceV1, REACTIVE_ONTOLOGY_VERSION,
             REQUIRED_RDKIT_VERSION,
         };
-        let facts = |structure: &str, mass: f64, oxirane: u32, amine_h: u32| MoleculeFactsV1 {
+        let facts = MoleculeFactsV1 {
             schema: "amphora.molecule-facts.v1".into(),
-            canonical_isomeric_smiles: structure.into(),
-            structure_identity: format!("smiles-sha256:{structure}"),
-            canonical_structure_sha256: stable_hash(&Value::String(structure.into())),
-            formula: "C2H4".into(),
-            average_molecular_weight_g_mol: mass,
-            oxirane_ring_count: oxirane,
-            reactive_amine_hydrogen_count: amine_h,
+            canonical_isomeric_smiles: "C1CO1".into(),
+            structure_identity: "smiles-sha256:C1CO1".into(),
+            canonical_structure_sha256: "unverified".into(),
+            formula: "C2H4O".into(),
+            average_molecular_weight_g_mol: 44.05,
+            oxirane_ring_count: 1,
+            reactive_amine_hydrogen_count: 0,
             reactive_flags: ReactiveFlagsV1 {
-                has_oxirane: oxirane > 0,
-                has_reactive_amine_hydrogen: amine_h > 0,
-                dual_role: oxirane > 0 && amine_h > 0,
+                has_oxirane: true,
+                has_reactive_amine_hydrogen: false,
+                dual_role: false,
             },
             ontology_version: REACTIVE_ONTOLOGY_VERSION.into(),
             toolkit_provenance: ToolkitProvenanceV1 {
@@ -2892,22 +2912,55 @@ mod tests {
                 exact_version_match: true,
             },
         };
-        let resin = facts("C1OC1", 200.0, 2, 0);
-        let hardener = facts("NCCN", 100.0, 0, 4);
-        let balance = EquivalentBalanceV1::from_host_facts(&resin, &hardener, 100.0, 1.0).unwrap();
-        assert_eq!(balance.eew_g_per_eq, 100.0);
-        assert_eq!(balance.ahew_g_per_eq, 25.0);
-        assert_eq!(balance.hardener_mass_g, 25.0);
-        assert_eq!(balance.theoretical_hardener_phr, 25.0);
+        assert!(matches!(
+            EquivalentBalanceV1::from_host_facts(&facts, &facts, 100.0, 1.0),
+            Err(EquivalentBalanceError::Toolkit)
+        ));
+    }
+
+    #[test]
+    #[cfg(feature = "rdkit")]
+    fn equivalent_balance_attests_facts_and_rejects_fabrication() {
+        use amphora_rdkit_ffi::molecule_facts;
+        // Genuine, RDKit-attested facts for a real epoxide resin and a real
+        // amine hardener; every field is what the pinned backend produced.
+        let resin =
+            molecule_facts("C(C1=CC=C(OCC2CO2)C=C1)(C)(C)C1=CC=C(OCC2CO2)C=C1").unwrap();
+        let hardener = molecule_facts("NCCN").unwrap();
+        assert!(resin.oxirane_ring_count > 0, "resin must have oxirane groups");
+        assert!(
+            hardener.reactive_amine_hydrogen_count > 0,
+            "hardener must have reactive amine hydrogens"
+        );
+        let balance =
+            EquivalentBalanceV1::from_host_facts(&resin, &hardener, 100.0, 1.0).unwrap();
+        assert!(
+            balance.theoretical_hardener_phr.is_finite() && balance.theoretical_hardener_phr > 0.0
+        );
         assert!(!balance.candidate_property_overrides_accepted);
         assert!(!balance.ranking_eligible);
+
+        // T-05 core attack: assert a molecular weight / oxirane count RDKit never
+        // produced for this structure. Attestation by recomputation rejects it.
+        let mut fabricated = resin.clone();
+        fabricated.average_molecular_weight_g_mol = 1.0;
+        fabricated.oxirane_ring_count = 999;
         assert!(matches!(
-            EquivalentBalanceV1::from_host_facts(&facts("CC", 20.0, 0, 0), &hardener, 100.0, 1.0),
+            EquivalentBalanceV1::from_host_facts(&fabricated, &hardener, 100.0, 1.0),
+            Err(EquivalentBalanceError::FactsNotHostAttested)
+        ));
+
+        // Genuine but inert facts still fail closed on the group check
+        // (attestation passes; the arithmetic gate fires afterwards).
+        let inert = molecule_facts("CC").unwrap();
+        assert!(matches!(
+            EquivalentBalanceV1::from_host_facts(&inert, &hardener, 100.0, 1.0),
             Err(EquivalentBalanceError::NoOxirane)
         ));
+        // Non-finite quantity with genuine facts -> InvalidQuantity.
         assert!(matches!(
-            EquivalentBalanceV1::from_host_facts(&resin, &facts("CC", 20.0, 0, 0), 100.0, 1.0),
-            Err(EquivalentBalanceError::NoReactiveAmineHydrogen)
+            EquivalentBalanceV1::from_host_facts(&resin, &hardener, f64::NAN, 1.0),
+            Err(EquivalentBalanceError::InvalidQuantity)
         ));
     }
 
