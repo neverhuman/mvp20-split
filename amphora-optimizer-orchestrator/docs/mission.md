@@ -12,11 +12,11 @@ It does not establish product qualification, batch release, procurement approval
 
 ## Honest current state
 
-The live checked implementation is native Rust at `amphora-engine/src/lib.rs` with SHA-256 `ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb`. Runtime registration is owned by `amphora-engine/src/lib.rs` and is checked against `module-manifest.json`. Retired Python implementation records have diagnostic provenance only and are not live authority.
+The live checked implementation is native Rust at `amphora-engine/src/lib.rs` with SHA-256 `c02afb09ae4e33f0d65e433b336da88d8f0058906cd0371d1f32c182b1454ab3`. Runtime registration is owned by `amphora-engine/src/lib.rs` and is checked against `module-manifest.json`. Retired Python implementation records have diagnostic provenance only and are not live authority.
 
 Focused checked test evidence:
 
-- `amphora-engine/src/lib.rs` — SHA-256 `ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb`
+- `amphora-engine/src/lib.rs` — SHA-256 `c02afb09ae4e33f0d65e433b336da88d8f0058906cd0371d1f32c182b1454ab3`
 - `amphora-core/src/lib.rs` — SHA-256 `24560480d5751d1696f6684848dbc22fbf77779e43f9dec5faa6696224726323`
 - `amphora-assurance-capabilities/src/diagnostics.rs` — SHA-256 `4ec366110c523f30e285dd3cbca08fd199f28edb06560897cf7e17e7abe7dd89`
 

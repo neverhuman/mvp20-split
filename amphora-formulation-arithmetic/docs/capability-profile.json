@@ -146,7 +146,7 @@
       },
       "adapter_registered": true,
       "registry_path": "amphora-engine/src/lib.rs",
-      "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
+      "registry_sha256": "c02afb09ae4e33f0d65e433b336da88d8f0058906cd0371d1f32c182b1454ab3"
     },
     "tests": [
       {

@@ -12,11 +12,11 @@ It does not establish product qualification, batch release, procurement approval
 
 ## Honest current state
 
-The live checked implementation is native Rust at `amphora-engine/src/lib.rs` with SHA-256 `ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb`. Runtime registration is owned by `amphora-engine/src/lib.rs` and is checked against `module-manifest.json`. Retired Python implementation records have diagnostic provenance only and are not live authority.
+The live checked implementation is native Rust at `amphora-engine/src/lib.rs` with SHA-256 `c02afb09ae4e33f0d65e433b336da88d8f0058906cd0371d1f32c182b1454ab3`. Runtime registration is owned by `amphora-engine/src/lib.rs` and is checked against `module-manifest.json`. Retired Python implementation records have diagnostic provenance only and are not live authority.
 
 Focused checked test evidence:
 
-- `amphora-engine/src/lib.rs` — SHA-256 `ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb`
+- `amphora-engine/src/lib.rs` — SHA-256 `c02afb09ae4e33f0d65e433b336da88d8f0058906cd0371d1f32c182b1454ab3`
 
 Operational state is `COMPLETE`; scientific state is `UNVALIDATED`, so the current phase is **Pre-Phase 0**. Execution and passing unit tests do not establish human parity. No readiness percentage is asserted.
 

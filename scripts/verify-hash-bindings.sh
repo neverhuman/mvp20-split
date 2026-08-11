@@ -98,11 +98,26 @@ print(f"hash bindings: {ok} ok, {broken} broken, {skipped} unresolvable/absent "
 # runs audits named mission-hash-provenance-staleness-v1 tracking exactly that. What
 # must never happen is the count going UP, which is what an accidental edit to a frozen
 # artifact looks like.
-BASELINE = 452
+# Raising this is legitimate ONLY when a reviewed source change makes a point-in-time
+# record legitimately stale -- e.g. landing a fix to amphora-engine/src/lib.rs moves its
+# hash, and older evidence/audit/*/diagnostic.*.json recorded the pre-fix value. Those
+# are historical records of what was audited THEN; rewriting them would be evidence
+# tampering. Raising it to paper over an accidental edit to a frozen artifact is not
+# legitimate -- revert instead.
+#
+#   452  after the 2026-08-23 handoff preparation (down from 558; six deleted evidence
+#        snapshots restored and four wrongly-edited frozen artifacts reverted)
+#   458  after landing R1 (T-01B) on amphora-engine/src/lib.rs and amphora-core/src/lib.rs.
+#        The six are those two files' pre-fix hashes inside the frozen
+#        eight-vector-facts-injection-v1 and normalized-molecule-consumer-sweep-v1 audit
+#        diagnostics, which recorded the engine as it was when those probes ran.
+BASELINE = 458
 if broken > BASELINE:
     print(f"REGRESSION: {broken - BASELINE} new broken binding(s) above the {BASELINE} baseline.",
           file=sys.stderr)
-    print("Something edited a pinned file. Do not update the baseline to make this pass.",
+    print("Something edited a pinned file. Revert it -- do not raise the baseline unless a",
+          file=sys.stderr)
+    print("reviewed source change legitimately staled a point-in-time record (see above).",
           file=sys.stderr)
     sys.exit(1)
 if broken < BASELINE:

@@ -83,7 +83,7 @@
     "focused_acceptance_command": "cargo test --workspace --locked",
     "implementation": {
       "path": "amphora-engine/src/lib.rs",
-      "sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb",
+      "sha256": "c02afb09ae4e33f0d65e433b336da88d8f0058906cd0371d1f32c182b1454ab3",
       "version": "0.1.0-rust",
       "version_source_path": "amphora-engine/Cargo.toml",
       "version_source_sha256": "1c311119e37b53f1155cf75757bf7f5d6925eb3dd2a86d9a8ca3dd053e9a9c5c"
@@ -104,12 +104,12 @@
       "adapter_policy": null,
       "adapter_registered": true,
       "registry_path": "amphora-engine/src/lib.rs",
-      "registry_sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
+      "registry_sha256": "c02afb09ae4e33f0d65e433b336da88d8f0058906cd0371d1f32c182b1454ab3"
     },
     "tests": [
       {
         "path": "amphora-engine/src/lib.rs",
-        "sha256": "ddfd50fcebf96b096fff8406dfe27b512ab8e88564f76b644ffda776df662abb"
+        "sha256": "c02afb09ae4e33f0d65e433b336da88d8f0058906cd0371d1f32c182b1454ab3"
       }
     ]
   },
