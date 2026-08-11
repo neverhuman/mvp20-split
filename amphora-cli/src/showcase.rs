@@ -5,7 +5,7 @@
 //! real computation on pinned data; throughput panels are engineering metrics
 //! only, never novelty/ranking/validated science.
 use crate::screen;
-use amphora_solver_lab::demos::p1::showcase_grid;
+use amphora_solver_lab::demos::p1::{showcase_grid, GridDelta};
 use anyhow::{anyhow, Result};
 use crossterm::{
     event::{self, Event, KeyCode},
@@ -99,6 +99,10 @@ struct State {
     opt_mak: f64,
     agree: Agreement,
     pareto: Vec<(f64, f64)>,
+    live_scatter: Vec<(f64, f64)>,
+    incumbent_voc: f64,
+    incumbent_red: f64,
+    convergence: Vec<(f64, f64)>,
     n_solvents: usize,
     excluded: usize,
     // E2 (p3)
@@ -120,6 +124,7 @@ struct State {
     screen_done: bool,
     screen_admissible: u64,
     screen_start_s: f64,
+    screen_ex: screen::Exemplar,
 }
 
 fn binom(n: u128, k: u128) -> u128 {
@@ -245,6 +250,8 @@ pub fn run_showcase(root: &Path, scale: Scale, autopilot: bool, headless: bool) 
     let total_cells = binom((units + 5) as u128, 5) as u64;
     let state = Arc::new(Mutex::new(State::default()));
     let progress = Arc::new(AtomicU64::new(0)); // E1 grid cells
+    let (grid_tx, grid_rx) = std::sync::mpsc::sync_channel::<GridDelta>(256);
+    state.lock().unwrap().incumbent_voc = f64::INFINITY;
     let screen_prog = Arc::new(AtomicU64::new(0)); // E4 compounds
     let started = Instant::now();
 
@@ -256,7 +263,7 @@ pub fn run_showcase(root: &Path, scale: Scale, autopilot: bool, headless: bool) 
             let _ = load_e1(&state);
             load_e2(&state);
             load_e3(&state);
-            if let Ok(g) = showcase_grid(units, &progress) {
+            if let Ok(g) = showcase_grid(units, &progress, Some(&grid_tx)) {
                 let mut s = state.lock().unwrap();
                 s.cells_total = g.cells_total;
                 s.cells_feasible = g.cells_feasible;
@@ -289,6 +296,7 @@ pub fn run_showcase(root: &Path, scale: Scale, autopilot: bool, headless: bool) 
     let backend = CrosstermBackend::new(stdout);
     let mut terminal = Terminal::new(backend)?;
     let mut ex = Ex::E1;
+    let mut cells_seen: u64 = 0;
     let mut ex_since = Instant::now();
     let mut screen_started = false;
     let res = (|| -> Result<()> {
@@ -297,6 +305,20 @@ pub fn run_showcase(root: &Path, scale: Scale, autopilot: bool, headless: bool) 
             if ex == Ex::E4 && !screen_started {
                 screen_started = true;
                 launch_screen(&root, &state, &screen_prog, started.elapsed().as_secs_f64());
+            }
+            for d in grid_rx.try_iter() {
+                cells_seen += d.cells_done_delta;
+                let mut st = state.lock().unwrap();
+                for pt in &d.new_samples {
+                    if st.live_scatter.len() < 800 {
+                        st.live_scatter.push((pt.0 as f64, pt.1 as f64));
+                    }
+                }
+                if d.chunk_best_voc < st.incumbent_voc {
+                    st.incumbent_voc = d.chunk_best_voc;
+                    st.incumbent_red = d.chunk_best_red;
+                    st.convergence.push((cells_seen as f64, d.chunk_best_voc));
+                }
             }
             let done = progress.load(Ordering::Relaxed);
             let sdone = screen_prog.load(Ordering::Relaxed);
@@ -374,6 +396,7 @@ fn launch_screen(root: &Path, state: &Arc<Mutex<State>>, prog: &Arc<AtomicU64>, 
             s.screen_distinct = o.distinct as u64;
             s.screen_cps = o.compounds_per_s;
             s.screen_admissible = o.optimizer_admissible as u64;
+            s.screen_ex = o.exemplar;
         }
         s.screen_running = false;
         s.screen_done = true;
@@ -437,9 +460,9 @@ fn draw_e1(f: &mut Frame, area: Rect, s: &State, done: u64, total: u64, elapsed:
             ]),
             Line::from(vec![
                 Span::styled("FEASIBLE ", Style::default().fg(GRAY)),
-                Span::styled(commafy(s.cells_feasible), Style::default().fg(CYAN)),
-                Span::styled("   BEST VOC ", Style::default().fg(GRAY)),
-                Span::styled(format!("{:.2} g/L", s.best_voc), Style::default().fg(AMBER).add_modifier(Modifier::BOLD)),
+                Span::styled(if s.grid_done { commafy(s.cells_feasible) } else { "searching…".to_string() }, Style::default().fg(CYAN)),
+                Span::styled("   BEST VOC (live) ", Style::default().fg(GRAY)),
+                Span::styled(format!("{:.2} g/L", if s.incumbent_voc.is_finite() { s.incumbent_voc } else { s.best_voc }), Style::default().fg(AMBER).add_modifier(Modifier::BOLD)),
                 Span::styled(format!("   ELAPSED {:.1}s", secs), Style::default().fg(GRAY)),
             ]),
         ])
@@ -455,34 +478,72 @@ fn draw_e1(f: &mut Frame, area: Rect, s: &State, done: u64, total: u64, elapsed:
             .label(Span::styled(label, Style::default().fg(INK).add_modifier(Modifier::BOLD))),
         cg[1],
     );
-    let mid = Layout::default().direction(Direction::Horizontal).constraints([Constraint::Percentage(62), Constraint::Percentage(38)]).split(rows[2]);
+    let mid = Layout::default().direction(Direction::Horizontal).constraints([Constraint::Percentage(58), Constraint::Percentage(42)]).split(rows[2]);
     draw_pareto(f, mid[0], s);
-    draw_agreement(f, mid[1], s);
+    let right = Layout::default().direction(Direction::Vertical).constraints([Constraint::Percentage(48), Constraint::Percentage(52)]).split(mid[1]);
+    draw_convergence(f, right[0], s);
+    draw_agreement(f, right[1], s);
     draw_ledger(f, rows[3], s);
     f.render_widget(Paragraph::new(Span::styled(footer_line(), Style::default().fg(GRAY))), rows[4]);
 }
 
 fn draw_pareto(f: &mut Frame, area: Rect, s: &State) {
-    if s.pareto.is_empty() {
+    if s.pareto.is_empty() && s.live_scatter.is_empty() {
         f.render_widget(Paragraph::new(Span::styled("computing pinned Pareto front…", Style::default().fg(GRAY))).block(block("Pareto: VOC vs Hansen RED")), area);
         return;
     }
-    let xs: Vec<f64> = s.pareto.iter().map(|p| p.0).collect();
-    let ys: Vec<f64> = s.pareto.iter().map(|p| p.1).collect();
+    let basis: &Vec<(f64, f64)> = if !s.pareto.is_empty() { &s.pareto } else { &s.live_scatter };
+    let xs: Vec<f64> = basis.iter().map(|p| p.0).collect();
+    let ys: Vec<f64> = basis.iter().map(|p| p.1).collect();
     let xlo = (xs.iter().cloned().fold(f64::INFINITY, f64::min) - 5.0).floor();
     let xhi = (xs.iter().cloned().fold(f64::NEG_INFINITY, f64::max) + 5.0).ceil();
     let ylo = (ys.iter().cloned().fold(f64::INFINITY, f64::min) - 0.05).max(0.0);
     let yhi = ys.iter().cloned().fold(f64::NEG_INFINITY, f64::max) + 0.05;
-    let opt = vec![(s.best_voc, s.best_red)];
+    let inc_voc = if s.incumbent_voc.is_finite() { s.incumbent_voc } else { s.best_voc };
+    let inc_red = if s.incumbent_voc.is_finite() { s.incumbent_red } else { s.best_red };
+    let opt = vec![(inc_voc, inc_red)];
     let datasets = vec![
-        Dataset::default().name("Pareto front").marker(symbols::Marker::Braille).graph_type(GraphType::Scatter).style(Style::default().fg(CYAN)).data(&s.pareto),
-        Dataset::default().name("optimum ★").marker(symbols::Marker::Braille).graph_type(GraphType::Scatter).style(Style::default().fg(MAGENTA).add_modifier(Modifier::BOLD)).data(&opt),
+        Dataset::default().name("signed reference front").marker(symbols::Marker::Braille).graph_type(GraphType::Scatter).style(Style::default().fg(GRAY)).data(&s.pareto),
+        Dataset::default().name("feasible (live)").marker(symbols::Marker::Braille).graph_type(GraphType::Scatter).style(Style::default().fg(CYAN)).data(&s.live_scatter),
+        Dataset::default().name("incumbent ★ (live)").marker(symbols::Marker::Braille).graph_type(GraphType::Scatter).style(Style::default().fg(MAGENTA).add_modifier(Modifier::BOLD)).data(&opt),
     ];
     f.render_widget(
         Chart::new(datasets)
             .block(block("Pareto: VOC (g/L) vs Hansen RED"))
             .x_axis(Axis::default().style(Style::default().fg(GRAY)).bounds([xlo, xhi]).labels(vec![Span::raw(format!("{xlo:.0}")), Span::raw(format!("{:.0}", (xlo + xhi) / 2.0)), Span::raw(format!("{xhi:.0}"))]))
             .y_axis(Axis::default().style(Style::default().fg(GRAY)).bounds([ylo, yhi]).labels(vec![Span::raw(format!("{ylo:.2}")), Span::raw(format!("{:.2}", (ylo + yhi) / 2.0)), Span::raw(format!("{yhi:.2}"))])),
+        area,
+    );
+}
+
+fn draw_convergence(f: &mut Frame, area: Rect, s: &State) {
+    if s.convergence.len() < 2 {
+        f.render_widget(
+            Paragraph::new(Span::styled(
+                "incumbent best VOC — descends live as the sweep finds better cells…",
+                Style::default().fg(GRAY),
+            ))
+            .block(block("convergence: best VOC vs cells swept")),
+            area,
+        );
+        return;
+    }
+    let data: Vec<(f64, f64)> = s.convergence.clone();
+    let xmax = data.last().map(|p| p.0).unwrap_or(1.0).max(1.0);
+    let ys: Vec<f64> = data.iter().map(|p| p.1).collect();
+    let ylo = (ys.iter().cloned().fold(f64::INFINITY, f64::min) - 2.0).floor();
+    let yhi = (ys.iter().cloned().fold(f64::NEG_INFINITY, f64::max) + 2.0).ceil();
+    let datasets = vec![Dataset::default()
+        .name("best VOC")
+        .marker(symbols::Marker::Braille)
+        .graph_type(GraphType::Line)
+        .style(Style::default().fg(GREEN).add_modifier(Modifier::BOLD))
+        .data(&data)];
+    f.render_widget(
+        Chart::new(datasets)
+            .block(block("convergence: best VOC (g/L) vs cells swept ↓"))
+            .x_axis(Axis::default().style(Style::default().fg(GRAY)).bounds([0.0, xmax]).labels(vec![Span::raw("0"), Span::raw(commafy(xmax as u64))]))
+            .y_axis(Axis::default().style(Style::default().fg(GRAY)).bounds([ylo, yhi]).labels(vec![Span::raw(format!("{ylo:.0}")), Span::raw(format!("{yhi:.0}"))])),
         area,
     );
 }
@@ -513,7 +574,7 @@ fn draw_ledger(f: &mut Frame, area: Rect, s: &State) {
     f.render_widget(
         Paragraph::new(vec![
             Line::from(vec![
-                Span::styled("OPTIMUM  ", Style::default().fg(GRAY)),
+                Span::styled("OPTIMAL BLEND  ", Style::default().fg(GREEN).add_modifier(Modifier::BOLD)),
                 Span::styled(format!("VOC {:.2} g/L", s.best_voc), Style::default().fg(AMBER).add_modifier(Modifier::BOLD)),
                 Span::styled(format!("   Hansen RED {:.3} (cap 1.0)", s.best_red), Style::default().fg(GREEN)),
                 Span::styled(format!("   flash {:.0}°C (≥38)", s.opt_flash), Style::default().fg(GREEN)),
@@ -525,7 +586,7 @@ fn draw_ledger(f: &mut Frame, area: Rect, s: &State) {
                 Span::styled(format!("   · {} solvents excluded fail-closed", s.excluded), Style::default().fg(GRAY)),
             ]),
         ])
-        .block(block("constraints & optimum (pinned, fail-closed)")),
+        .block(block("OPTIMAL BLEND — signed VOC-min optimum · 3-method agreement ✔")),
         area,
     );
 }
@@ -643,19 +704,30 @@ fn draw_e4(f: &mut Frame, area: Rect, s: &State, sdone: u64, elapsed: Duration) 
         .block(block("throughput (fully gate-scored, distinct-by-canonical-SHA256)")),
         rows[1],
     );
+    let midrow = Layout::default().direction(Direction::Horizontal).constraints([Constraint::Percentage(42), Constraint::Percentage(58)]).split(rows[2]);
+    let gcol = Layout::default().direction(Direction::Vertical).constraints([Constraint::Length(3), Constraint::Min(1)]).split(midrow[0]);
     f.render_widget(
         Gauge::default().block(block("screen progress")).gauge_style(Style::default().fg(if s.screen_done { GREEN } else { CYAN }).bg(Color::Rgb(30, 41, 59))).percent(pct.min(100)).label(Span::styled(format!("{pct}%"), Style::default().fg(INK).add_modifier(Modifier::BOLD))),
-        rows[2],
+        gcol[0],
     );
     f.render_widget(
         Paragraph::new(vec![
-            Line::from(Span::styled("GATE FUNNEL  enumerated → RDKit-valid → normalized → property/role/novelty/design-gate → distinct", Style::default().fg(GRAY))),
+            Line::from(Span::styled("GATE FUNNEL", Style::default().fg(CYAN).add_modifier(Modifier::BOLD))),
+            Line::from(Span::styled("enumerated → RDKit-valid → normalized →", Style::default().fg(GRAY))),
+            Line::from(Span::styled("property/role/novelty/design-gate → distinct", Style::default().fg(GRAY))),
+        ]).block(block("pipeline")),
+        gcol[1],
+    );
+    exemplar_card(f, midrow[1], &s.screen_ex);
+    f.render_widget(
+        Paragraph::new(vec![
             Line::from(vec![
                 Span::styled("SPEEDUP  ", Style::default().fg(AMBER).add_modifier(Modifier::BOLD)),
                 Span::styled("corpus-fingerprint cache: 10 → 2 RDKit calls/compound, bit-identical (proven by test)", Style::default().fg(INK)),
             ]),
+            Line::from(Span::styled("every compound distinct by canonical SHA-256 · scoring bit-identical across 1…128 workers", Style::default().fg(GRAY))),
         ])
-        .block(block("pipeline")),
+        .block(block("faster, provably identical")),
         rows[3],
     );
     f.render_widget(
@@ -664,6 +736,50 @@ fn draw_e4(f: &mut Frame, area: Rect, s: &State, sdone: u64, elapsed: Duration) 
             Style::default().fg(GRAY),
         )),
         rows[4],
+    );
+}
+
+fn exemplar_card(f: &mut Frame, area: Rect, e: &screen::Exemplar) {
+    if !e.found {
+        f.render_widget(
+            Paragraph::new(Span::styled("finding a structurally-admissible exemplar…", Style::default().fg(GRAY)))
+                .block(block("admissible exemplar")),
+            area,
+        );
+        return;
+    }
+    let ew = if e.role == "hardener" {
+        format!("AHEW {:.1} g/eq", e.ahew.unwrap_or(0.0))
+    } else {
+        format!("EEW {:.1} g/eq", e.eew.unwrap_or(0.0))
+    };
+    let nd = e.novelty_dist.map(|v| format!("{v:.2}")).unwrap_or_else(|| "—".into());
+    f.render_widget(
+        Paragraph::new(vec![
+            Line::from(vec![
+                Span::styled("SMILES  ", Style::default().fg(GRAY)),
+                Span::styled(e.smiles.clone(), Style::default().fg(CYAN).add_modifier(Modifier::BOLD)),
+                Span::styled("    role ", Style::default().fg(GRAY)),
+                Span::styled(e.role.clone(), Style::default().fg(INK).add_modifier(Modifier::BOLD)),
+            ]),
+            Line::from(vec![
+                Span::styled("formula ", Style::default().fg(GRAY)),
+                Span::styled(e.formula.clone(), Style::default().fg(INK)),
+                Span::styled(format!("   MW {:.1}", e.mw), Style::default().fg(INK)),
+                Span::styled(format!("   {ew}", ), Style::default().fg(AMBER).add_modifier(Modifier::BOLD)),
+            ]),
+            Line::from(vec![
+                Span::styled("design-gate ", Style::default().fg(GRAY)),
+                Span::styled("pass_all_hard ✔", Style::default().fg(GREEN).add_modifier(Modifier::BOLD)),
+                Span::styled(format!("    novelty-dist {nd}"), Style::default().fg(GRAY)),
+            ]),
+            Line::from(Span::styled(
+                "structural applicability only — an admissible exemplar, NOT ranked, recommended, validated, or a performance/safety claim",
+                Style::default().fg(GRAY),
+            )),
+        ])
+        .block(block("admissible exemplar — passes ALL hard design gates (AUDIT_ONLY, not ranked)")),
+        area,
     );
 }
 

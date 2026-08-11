@@ -85,6 +85,29 @@ fn screen_candidate(id: &str, role: &str, smiles: &str) -> Value {
     })
 }
 
+/// A structurally-admissible exemplar (passes ALL hard design gates). This is a
+/// FILTER result, never a ranking: molecule modules are AUDIT_ONLY /
+/// ranking_eligible:false and expose no score. Selected quality-neutrally (the
+/// lexicographically-smallest canonical structure hash among admissible ones).
+#[derive(Default, Clone)]
+pub struct Exemplar {
+    pub found: bool,
+    pub smiles: String,
+    pub formula: String,
+    pub mw: f64,
+    pub role: String,
+    pub eew: Option<f64>,
+    pub ahew: Option<f64>,
+    pub novelty_dist: Option<f64>,
+}
+
+fn envelope<'a>(v: &'a Value, module_id: &str) -> Option<&'a Value> {
+    v.pointer("/score_envelopes")?
+        .as_array()?
+        .iter()
+        .find(|e| e.get("module_id").and_then(Value::as_str) == Some(module_id))
+}
+
 pub struct ScreenOutcome {
     pub target: usize,
     pub scored_ok: usize,
@@ -94,6 +117,7 @@ pub struct ScreenOutcome {
     pub workers: usize,
     pub elapsed_s: f64,
     pub compounds_per_s: f64,
+    pub exemplar: Exemplar,
 }
 
 /// Full-score throughput: build one CandidateEnvelope per distinct compound and
@@ -123,6 +147,8 @@ pub fn run_screen(
     let mut all_normalized = true;
     let mut optimizer_admissible = 0usize;
     let mut distinct: HashSet<String> = HashSet::new();
+    let mut best_hash: Option<String> = None;
+    let mut exemplar = Exemplar::default();
     for row in &results {
         match row {
             Ok((value, _)) => {
@@ -147,6 +173,47 @@ pub fn run_screen(
                         optimizer_admissible += 1;
                     }
                 }
+                // Admissible-exemplar FILTER (not a sort): keep only compounds
+                // that pass ALL hard design gates, then select the one with the
+                // lexicographically smallest canonical hash -- quality-neutral.
+                let pass_all_hard = envelope(value, "amphora-molecule-design-gate")
+                    .and_then(|e| e.pointer("/gates/pass_all_hard"))
+                    .and_then(Value::as_bool)
+                    == Some(true);
+                if pass_all_hard {
+                    if let Some(hash) = value
+                        .pointer("/candidate/normalized_molecule/normalization/canonical_structure_hash")
+                        .and_then(Value::as_str)
+                    {
+                        let better = match &best_hash {
+                            None => true,
+                            Some(h) => hash < h.as_str(),
+                        };
+                        if better {
+                            best_hash = Some(hash.to_string());
+                            let facts = value
+                                .pointer("/candidate/normalized_molecule/normalization/molecule_facts_v1");
+                            let f = |k: &str| facts.and_then(|x| x.get(k)).and_then(Value::as_f64);
+                            let sv = |ptr: &str| value.pointer(ptr).and_then(Value::as_str).unwrap_or("").to_string();
+                            let prop = envelope(value, "amphora-molecule-property");
+                            let eew = prop.and_then(|e| e.pointer("/metrics/property_results/eew_g_per_eq")).and_then(Value::as_f64);
+                            let ahew = prop.and_then(|e| e.pointer("/metrics/property_results/ahew_g_per_eq")).and_then(Value::as_f64);
+                            let novelty_dist = envelope(value, "amphora-molecule-novelty")
+                                .and_then(|e| e.pointer("/metrics/novelty_score"))
+                                .and_then(Value::as_f64);
+                            exemplar = Exemplar {
+                                found: true,
+                                smiles: sv("/candidate/normalized_molecule/normalization/molecule_facts_v1/canonical_isomeric_smiles"),
+                                formula: facts.and_then(|x| x.get("formula")).and_then(Value::as_str).unwrap_or("").to_string(),
+                                mw: f("average_molecular_weight_g_mol").unwrap_or(0.0),
+                                role: sv("/candidate/normalized_molecule/molecule/role"),
+                                eew,
+                                ahew,
+                                novelty_dist,
+                            };
+                        }
+                    }
+                }
             }
             Err(_) => all_normalized = false,
         }
@@ -161,6 +228,7 @@ pub fn run_screen(
         workers,
         elapsed_s: secs,
         compounds_per_s: scored_ok as f64 / secs,
+        exemplar,
     })
 }
 
@@ -227,6 +295,12 @@ pub fn run_cli(root: &Path, target: usize, workers: usize, n_max: usize, do_pres
     println!("  workers              : {}", outcome.workers);
     println!("  elapsed              : {:.2}s", outcome.elapsed_s);
     println!("  >> COMPOUNDS/SEC     : {:.0}", outcome.compounds_per_s);
+    if outcome.exemplar.found {
+        let e = &outcome.exemplar;
+        println!("  admissible exemplar  : {} ({}) role={} MW={:.1} eew={:?} ahew={:?} novelty_dist={:?}",
+            e.smiles, e.formula, e.role, e.mw, e.eew, e.ahew, e.novelty_dist);
+        println!("    (passes all hard design gates; structural applicability only, NOT ranked/validated)");
+    }
 
     if do_prescreen {
         let smiles: Vec<String> = compounds.iter().map(|(_, _, s)| s.clone()).collect();

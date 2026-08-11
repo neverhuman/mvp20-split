@@ -511,6 +511,15 @@ use rayon::prelude::*;
 use std::sync::atomic::{AtomicU64, Ordering};
 
 /// Result of a live scaled grid sweep for the Act 1 panel.
+/// Live per-chunk optimization delta streamed to the showcase UI (display-only;
+/// the signed diagnostic() and the final returned optimum are unaffected).
+pub struct GridDelta {
+    pub cells_done_delta: u64,
+    pub chunk_best_voc: f64,
+    pub chunk_best_red: f64,
+    pub new_samples: Vec<(f32, f32)>,
+}
+
 pub struct ShowcaseGrid {
     pub cells_total: u64,
     pub cells_feasible: u64,
@@ -567,7 +576,11 @@ fn showcase_blend_inputs() -> Result<(Vec<Solvent>, [f64; 3], f64)> {
 /// Enumerate the carrier simplex at `units` resolution, in parallel over the
 /// first-solvent count, evaluating every cell with the real constraints.
 /// `progress` receives the running count of cells evaluated (for the live UI).
-pub fn showcase_grid(units: usize, progress: &AtomicU64) -> Result<ShowcaseGrid> {
+pub fn showcase_grid(
+    units: usize,
+    progress: &AtomicU64,
+    live: Option<&std::sync::mpsc::SyncSender<GridDelta>>,
+) -> Result<ShowcaseGrid> {
     let (solvents, center, radius) = showcase_blend_inputs()?;
     let n = solvents.len();
     let phi = VS_HI;
@@ -602,6 +615,16 @@ pub fn showcase_grid(units: usize, progress: &AtomicU64) -> Result<ShowcaseGrid>
                 }
             });
             progress.fetch_add(total, Ordering::Relaxed);
+            if let Some(tx) = live {
+                // try_send drops when the bounded channel is full -> natural
+                // throttle; compute never blocks on the UI.
+                let _ = tx.try_send(GridDelta {
+                    cells_done_delta: total,
+                    chunk_best_voc: best_voc,
+                    chunk_best_red: best_red,
+                    new_samples: samples.clone(),
+                });
+            }
             (total, feas, best_voc, best_red, samples)
         })
         .collect();
