@@ -27,6 +27,7 @@ amphora-tui = { path = "../amphora-tui" }
 amphora-solver-lab = { path = "../amphora-solver-lab" }
 ratatui = { workspace = true }
 crossterm = { workspace = true }
+rayon = { workspace = true }
 anyhow.workspace = true
 base64.workspace = true
 clap.workspace = true

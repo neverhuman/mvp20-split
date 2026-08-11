@@ -4,6 +4,7 @@ mod dashboard;
 mod phase0;
 mod phase1;
 mod showcase;
+mod screen;
 
 use amphora_core::{
     apply_rank_deltas, collect_claim_locks, make_score_history, now_ms, rank_candidates,
@@ -38,6 +39,18 @@ struct ShowcaseArgs {
     headless: bool,
 }
 
+#[derive(Args, Debug)]
+struct ScreenArgs {
+    #[arg(long, default_value_t = 20000)]
+    target: usize,
+    #[arg(long, default_value_t = 64)]
+    workers: usize,
+    #[arg(long, default_value_t = 30)]
+    n_max: usize,
+    #[arg(long)]
+    prescreen: bool,
+}
+
 #[derive(Parser, Debug)]
 #[command(
     name = "amphora-tui",
@@ -62,6 +75,8 @@ enum Command {
     Run(RunArgs),
     /// Founder demo showcase TUI (Act 1 live solver + red-team board)
     Showcase(ShowcaseArgs),
+    /// Compounds/second molecule screening throughput (engineering metric)
+    Screen(ScreenArgs),
     Inspect(InspectArgs),
     Replay(ReplayArgs),
     Resume {
@@ -1157,6 +1172,7 @@ fn main() -> Result<()> {
             };
             showcase::run_showcase(scale, args.autopilot, args.headless)
         }
+        Command::Screen(args) => screen::run_cli(&root, args.target, args.workers, args.n_max, args.prescreen),
         Command::Inspect(args) => run(
             RunArgs {
                 candidate: Some(args.candidate),
