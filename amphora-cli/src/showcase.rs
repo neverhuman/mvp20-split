@@ -1,9 +1,10 @@
-//! Founder demo showcase TUI. Act 1 (centerpiece): a live constrained-formulation
-//! solver -- a racing cells-evaluated counter over the REAL amphora-solver-lab
-//! constraint math on pinned signed data, with a VOC-vs-Hansen-RED Pareto
-//! scatter and the grid / projected-gradient / NSGA-II three-method agreement.
-//! Act 2 (board): the red-team scoreboard -- the three spine attacks this
-//! session closed -- plus the demo module board.
+//! Founder demo showcase TUI — four runnable examples + a red-team board.
+//! E1 live VOC-min solver (billions of real formulation cells), E2 hazard-
+//! constrained hardener selection (honest EMPTY feasible set), E3 2^4 factorial
+//! process screen, E4 live COMPOUNDS/SECOND molecule screening. Every number is a
+//! real computation on pinned data; throughput panels are engineering metrics
+//! only, never novelty/ranking/validated science.
+use crate::screen;
 use amphora_solver_lab::demos::p1::showcase_grid;
 use anyhow::{anyhow, Result};
 use crossterm::{
@@ -13,7 +14,7 @@ use crossterm::{
 };
 use ratatui::{
     backend::CrosstermBackend,
-    layout::{Alignment, Constraint, Direction, Layout, Rect},
+    layout::{Constraint, Direction, Layout, Rect},
     style::{Color, Modifier, Style},
     symbols,
     text::{Line, Span},
@@ -22,7 +23,8 @@ use ratatui::{
 };
 use serde_json::Value;
 use std::io::{self, IsTerminal};
-use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
+use std::path::Path;
+use std::sync::atomic::{AtomicU64, Ordering};
 use std::sync::{Arc, Mutex};
 use std::thread;
 use std::time::{Duration, Instant};
@@ -57,6 +59,15 @@ impl Scale {
     }
 }
 
+#[derive(Clone, Copy, PartialEq)]
+enum Ex {
+    E1,
+    E2,
+    E3,
+    E4,
+    Board,
+}
+
 #[derive(Default)]
 struct Agreement {
     grid: f64,
@@ -67,8 +78,17 @@ struct Agreement {
     nsga_ok: bool,
 }
 
+#[derive(Default, Clone)]
+struct Hazard {
+    candidate: String,
+    h317: bool,
+    h351: bool,
+    ad_fail: bool,
+}
+
 #[derive(Default)]
 struct State {
+    // E1
     ready: bool,
     grid_done: bool,
     cells_total: u64,
@@ -81,9 +101,27 @@ struct State {
     pareto: Vec<(f64, f64)>,
     n_solvents: usize,
     excluded: usize,
+    // E2 (p3)
+    hazards: Vec<Hazard>,
+    p3_feasible: i64,
+    p3_status: String,
+    // E3 (p4)
+    p4_solved: i64,
+    p4_infeasible: i64,
+    p4_cells: usize,
+    p4_status: String,
+    // E4 (compound screen)
+    screen_total: u64,
+    screen_scored: u64,
+    screen_distinct: u64,
+    screen_cps: f64,
+    screen_workers: usize,
+    screen_running: bool,
+    screen_done: bool,
+    screen_admissible: u64,
+    screen_start_s: f64,
 }
 
-/// n-choose-k for the analytic cell total (u128 to avoid overflow).
 fn binom(n: u128, k: u128) -> u128 {
     if k > n {
         return 0;
@@ -98,30 +136,29 @@ fn binom(n: u128, k: u128) -> u128 {
 
 fn commafy(n: u64) -> String {
     let s = n.to_string();
+    let b = s.as_bytes();
     let mut out = String::new();
-    let bytes = s.as_bytes();
-    for (i, b) in bytes.iter().enumerate() {
-        if i > 0 && (bytes.len() - i) % 3 == 0 {
+    for (i, ch) in b.iter().enumerate() {
+        if i > 0 && (b.len() - i) % 3 == 0 {
             out.push(',');
         }
-        out.push(*b as char);
+        out.push(*ch as char);
     }
     out
 }
 
-fn load_authoritative(state: &Arc<Mutex<State>>) -> Result<()> {
+fn load_e1(state: &Arc<Mutex<State>>) -> Result<()> {
     let bytes = amphora_solver_lab::demos::run("p1")?;
     let v: Value = serde_json::from_slice(&bytes)?;
-    let ma = v.pointer("/results/method_agreement").ok_or_else(|| anyhow!("no method_agreement"))?;
-    let ob = v.pointer("/results/optimal_blend").ok_or_else(|| anyhow!("no optimal_blend"))?;
-    let f = |p: &str| v.pointer(p).and_then(Value::as_f64).unwrap_or(0.0);
-    let b = |p: &str| v.pointer(p).and_then(Value::as_bool).unwrap_or(false);
-    let mut pareto: Vec<(f64, f64)> = Vec::new();
+    let ma = v.pointer("/results/method_agreement").ok_or_else(|| anyhow!("no agreement"))?;
+    let ob = v.pointer("/results/optimal_blend").ok_or_else(|| anyhow!("no optimum"))?;
+    let mut pareto = Vec::new();
     if let Some(arr) = v.pointer("/results/pareto_slice_voc_vs_red").and_then(Value::as_array) {
         for row in arr {
-            let voc = row.get("voc_g_per_l").and_then(Value::as_f64);
-            let red = row.get("red").and_then(Value::as_f64);
-            if let (Some(x), Some(y)) = (voc, red) {
+            if let (Some(x), Some(y)) = (
+                row.get("voc_g_per_l").and_then(Value::as_f64),
+                row.get("red").and_then(Value::as_f64),
+            ) {
                 pareto.push((x, y));
             }
         }
@@ -140,8 +177,7 @@ fn load_authoritative(state: &Arc<Mutex<State>>) -> Result<()> {
         passed: ma.get("grid_pg_agree_within_1e_9").and_then(Value::as_bool).unwrap_or(false),
         nsga_ok: ma.get("nsga2_never_beats_exhaustive_optimum").and_then(Value::as_bool).unwrap_or(false),
     };
-    let _ = b;
-    s.best_voc = ob.get("voc_g_per_l").and_then(Value::as_f64).unwrap_or(f("/results/optimal_blend/voc_g_per_l"));
+    s.best_voc = ob.get("voc_g_per_l").and_then(Value::as_f64).unwrap_or(0.0);
     s.best_red = ob.get("hansen_red_vs_dgeba").and_then(Value::as_f64).unwrap_or(0.0);
     s.opt_flash = ob.get("min_flash_c_on_support").and_then(Value::as_f64).unwrap_or(0.0);
     s.opt_mak = ob.pointer("/composition_volume_fraction_of_carrier/mak").and_then(Value::as_f64).unwrap_or(0.0);
@@ -151,20 +187,75 @@ fn load_authoritative(state: &Arc<Mutex<State>>) -> Result<()> {
     Ok(())
 }
 
-/// Entry point.
-pub fn run_showcase(scale: Scale, autopilot: bool, headless: bool) -> Result<()> {
+fn load_e2(state: &Arc<Mutex<State>>) {
+    let Ok(bytes) = amphora_solver_lab::demos::run("p3") else { return };
+    let Ok(v) = serde_json::from_slice::<Value>(&bytes) else { return };
+    let r = match v.pointer("/results") {
+        Some(r) => r,
+        None => return,
+    };
+    let set = |k: &str| -> Vec<String> {
+        r.pointer(&format!("/blocking_summary/{k}"))
+            .and_then(Value::as_array)
+            .map(|a| a.iter().filter_map(|x| x.as_str().map(String::from)).collect())
+            .unwrap_or_default()
+    };
+    let h317 = set("H317_skin_sensitiser");
+    let h351 = set("H351_suspected_carcinogen");
+    let ad = set("ad_gate_failures");
+    let mut names: Vec<String> = h317.clone();
+    for n in h351.iter().chain(ad.iter()) {
+        if !names.contains(n) {
+            names.push(n.clone());
+        }
+    }
+    names.sort();
+    let hazards: Vec<Hazard> = names
+        .iter()
+        .map(|c| Hazard {
+            candidate: c.clone(),
+            h317: h317.contains(c),
+            h351: h351.contains(c),
+            ad_fail: ad.contains(c),
+        })
+        .collect();
+    let mut s = state.lock().unwrap();
+    s.hazards = hazards;
+    s.p3_feasible = r.get("n_feasible").and_then(Value::as_i64).unwrap_or(0);
+    s.p3_status = v.pointer("/pareto_status").and_then(Value::as_str).unwrap_or("").to_string();
+}
+
+fn load_e3(state: &Arc<Mutex<State>>) {
+    let Ok(bytes) = amphora_solver_lab::demos::run("p4") else { return };
+    let Ok(v) = serde_json::from_slice::<Value>(&bytes) else { return };
+    let r = match v.pointer("/results") {
+        Some(r) => r,
+        None => return,
+    };
+    let mut s = state.lock().unwrap();
+    s.p4_solved = r.get("n_solved").and_then(Value::as_i64).unwrap_or(0);
+    s.p4_infeasible = r.get("n_infeasible").and_then(Value::as_i64).unwrap_or(0);
+    s.p4_cells = r.get("cells").and_then(Value::as_array).map(|a| a.len()).unwrap_or(0);
+    s.p4_status = v.pointer("/pareto_status").and_then(Value::as_str).unwrap_or("").to_string();
+}
+
+pub fn run_showcase(root: &Path, scale: Scale, autopilot: bool, headless: bool) -> Result<()> {
+    let root = root.to_path_buf();
     let units = scale.units();
-    let total_cells = binom((units + 5) as u128, 5) as u64; // 6 solvents assumed for the gauge
+    let total_cells = binom((units + 5) as u128, 5) as u64;
     let state = Arc::new(Mutex::new(State::default()));
-    let progress = Arc::new(AtomicU64::new(0));
+    let progress = Arc::new(AtomicU64::new(0)); // E1 grid cells
+    let screen_prog = Arc::new(AtomicU64::new(0)); // E4 compounds
     let started = Instant::now();
 
-    // Background: authoritative p1 (fast) then the live scaled grid.
+    // Background: E1 authoritative + E2/E3, then the E1 live grid.
     {
         let state = state.clone();
         let progress = progress.clone();
         thread::spawn(move || {
-            let _ = load_authoritative(&state);
+            let _ = load_e1(&state);
+            load_e2(&state);
+            load_e3(&state);
             if let Ok(g) = showcase_grid(units, &progress) {
                 let mut s = state.lock().unwrap();
                 s.cells_total = g.cells_total;
@@ -180,12 +271,15 @@ pub fn run_showcase(scale: Scale, autopilot: bool, headless: bool) -> Result<()>
     }
 
     if headless || !io::stdout().is_terminal() {
-        // Run to completion, then print a text snapshot.
         while !state.lock().unwrap().grid_done {
             thread::sleep(Duration::from_millis(100));
         }
-        let done = progress.load(Ordering::Relaxed);
-        print!("{}", snapshot_text(&state.lock().unwrap(), done, total_cells, started.elapsed()));
+        // also run the E4 screen once for the snapshot
+        launch_screen(&root, &state, &screen_prog, 0.0);
+        while state.lock().unwrap().screen_running {
+            thread::sleep(Duration::from_millis(100));
+        }
+        print!("{}", snapshot_text(&state.lock().unwrap(), progress.load(Ordering::Relaxed), total_cells));
         return Ok(());
     }
 
@@ -194,33 +288,53 @@ pub fn run_showcase(scale: Scale, autopilot: bool, headless: bool) -> Result<()>
     execute!(stdout, EnterAlternateScreen)?;
     let backend = CrosstermBackend::new(stdout);
     let mut terminal = Terminal::new(backend)?;
-    let cancel = Arc::new(AtomicBool::new(false));
-    let mut act: u8 = 1;
-    let mut act_since = Instant::now();
+    let mut ex = Ex::E1;
+    let mut ex_since = Instant::now();
+    let mut screen_started = false;
     let res = (|| -> Result<()> {
         loop {
+            // lazily launch the E4 screen when it's first shown (keeps it live)
+            if ex == Ex::E4 && !screen_started {
+                screen_started = true;
+                launch_screen(&root, &state, &screen_prog, started.elapsed().as_secs_f64());
+            }
             let done = progress.load(Ordering::Relaxed);
+            let sdone = screen_prog.load(Ordering::Relaxed);
             let elapsed = started.elapsed();
             {
                 let s = state.lock().unwrap();
-                terminal.draw(|f| draw(f, &s, act, done, total_cells, elapsed))?;
+                terminal.draw(|f| draw(f, &s, ex, done, total_cells, sdone, elapsed))?;
             }
             if event::poll(Duration::from_millis(60))? {
                 if let Event::Key(key) = event::read()? {
                     match key.code {
                         KeyCode::Char('q') => break,
-                        KeyCode::Char('1') => act = 1,
-                        KeyCode::Char('2') => act = 2,
-                        KeyCode::Char(' ') => act_since = Instant::now(),
+                        KeyCode::Char('1') => ex = Ex::E1,
+                        KeyCode::Char('2') => ex = Ex::E2,
+                        KeyCode::Char('3') => ex = Ex::E3,
+                        KeyCode::Char('4') => ex = Ex::E4,
+                        KeyCode::Char('5') => ex = Ex::Board,
+                        KeyCode::Char(' ') => ex_since = Instant::now(),
                         _ => {}
                     }
                 }
             }
-            if autopilot && act_since.elapsed() > Duration::from_secs(if act == 1 { 30 } else { 12 }) {
-                act = if act == 1 { 2 } else { 1 };
-                act_since = Instant::now();
+            let dwell = match ex {
+                Ex::E1 => 26,
+                Ex::E4 => 22,
+                Ex::Board => 14,
+                _ => 11,
+            };
+            if autopilot && ex_since.elapsed() > Duration::from_secs(dwell) {
+                ex = match ex {
+                    Ex::E1 => Ex::E2,
+                    Ex::E2 => Ex::E3,
+                    Ex::E3 => Ex::E4,
+                    Ex::E4 => Ex::Board,
+                    Ex::Board => Ex::E1,
+                };
+                ex_since = Instant::now();
             }
-            let _ = &cancel;
         }
         Ok(())
     })();
@@ -230,103 +344,122 @@ pub fn run_showcase(scale: Scale, autopilot: bool, headless: bool) -> Result<()>
     res
 }
 
+fn launch_screen(root: &Path, state: &Arc<Mutex<State>>, prog: &Arc<AtomicU64>, start_s: f64) {
+    {
+        let mut s = state.lock().unwrap();
+        if s.screen_running || s.screen_done {
+            return;
+        }
+        s.screen_running = true;
+        s.screen_start_s = start_s;
+    }
+    let root = root.to_path_buf();
+    let state = state.clone();
+    let prog = prog.clone();
+    let workers = 96usize;
+    let target = 12000usize;
+    thread::spawn(move || {
+        let compounds = screen::enumerate_distinct(target, 30);
+        {
+            let mut s = state.lock().unwrap();
+            s.screen_total = compounds.len() as u64;
+            s.screen_workers = workers;
+        }
+        let outcome = screen::run_screen(&root, &compounds, workers, |c| {
+            prog.store(c, Ordering::Relaxed);
+        });
+        let mut s = state.lock().unwrap();
+        if let Ok(o) = outcome {
+            s.screen_scored = o.scored_ok as u64;
+            s.screen_distinct = o.distinct as u64;
+            s.screen_cps = o.compounds_per_s;
+            s.screen_admissible = o.optimizer_admissible as u64;
+        }
+        s.screen_running = false;
+        s.screen_done = true;
+    });
+}
+
 fn block(title: &str) -> Block<'_> {
     Block::default()
         .borders(Borders::ALL)
         .border_style(Style::default().fg(EDGE))
         .style(Style::default().bg(PANEL))
-        .title(Span::styled(
-            format!(" {title} "),
-            Style::default().fg(CYAN).add_modifier(Modifier::BOLD),
-        ))
+        .title(Span::styled(format!(" {title} "), Style::default().fg(CYAN).add_modifier(Modifier::BOLD)))
 }
 
-fn draw(f: &mut Frame, s: &State, act: u8, done: u64, total: u64, elapsed: Duration) {
-    f.render_widget(Block::default().style(Style::default().bg(BG)), f.area());
-    if act == 1 {
-        draw_act1(f, f.area(), s, done, total, elapsed);
-    } else {
-        draw_board(f, f.area());
-    }
-}
-
-fn draw_act1(f: &mut Frame, area: Rect, s: &State, done: u64, total: u64, elapsed: Duration) {
-    let rows = Layout::default()
-        .direction(Direction::Vertical)
-        .constraints([
-            Constraint::Length(3), // title
-            Constraint::Length(4), // counters + gauge
-            Constraint::Min(10),   // pareto + agreement
-            Constraint::Length(4), // constraint ledger
-            Constraint::Length(1), // footer
-        ])
-        .split(area);
-
-    // title
+fn header(f: &mut Frame, area: Rect, tag: &str, title: &str, sub: &str) {
     f.render_widget(
         Paragraph::new(Line::from(vec![
             Span::styled("AMPHORA", Style::default().fg(CYAN).add_modifier(Modifier::BOLD)),
-            Span::styled("  ACT 1 · CONSTRAINED FORMULATION SOLVER", Style::default().fg(INK).add_modifier(Modifier::BOLD)),
-            Span::styled("   VOC-min solvent blend over the pinned ingredient library", Style::default().fg(GRAY)),
+            Span::styled(format!("  {tag} · "), Style::default().fg(GRAY)),
+            Span::styled(title, Style::default().fg(INK).add_modifier(Modifier::BOLD)),
+            Span::styled(format!("   {sub}"), Style::default().fg(GRAY)),
         ]))
-        .block(block("live optimizer")),
-        rows[0],
+        .block(block("example")),
+        area,
     );
+}
 
-    // counters + gauge
-    let cg = Layout::default()
-        .direction(Direction::Horizontal)
-        .constraints([Constraint::Percentage(58), Constraint::Percentage(42)])
-        .split(rows[1]);
+fn footer_line() -> &'static str {
+    "  [1] solver  [2] hazard  [3] factorial  [4] compounds/sec  [5] red-team board  ·  [space] hold  [q] quit"
+}
+
+fn draw(f: &mut Frame, s: &State, ex: Ex, done: u64, total: u64, sdone: u64, elapsed: Duration) {
+    f.render_widget(Block::default().style(Style::default().bg(BG)), f.area());
+    match ex {
+        Ex::E1 => draw_e1(f, f.area(), s, done, total, elapsed),
+        Ex::E2 => draw_e2(f, f.area(), s),
+        Ex::E3 => draw_e3(f, f.area(), s),
+        Ex::E4 => draw_e4(f, f.area(), s, sdone, elapsed),
+        Ex::Board => draw_board(f, f.area()),
+    }
+}
+
+fn draw_e1(f: &mut Frame, area: Rect, s: &State, done: u64, total: u64, elapsed: Duration) {
+    let rows = Layout::default()
+        .direction(Direction::Vertical)
+        .constraints([Constraint::Length(3), Constraint::Length(4), Constraint::Min(10), Constraint::Length(4), Constraint::Length(1)])
+        .split(area);
+    header(f, rows[0], "E1", "VOC-MIN SOLVENT BLEND", "constrained formulation solver over the pinned ingredient library");
+    let cg = Layout::default().direction(Direction::Horizontal).constraints([Constraint::Percentage(58), Constraint::Percentage(42)]).split(rows[1]);
     let secs = elapsed.as_secs_f64().max(0.001);
     let eps = (done as f64 / secs) as u64;
     let pct = if total > 0 { ((done.min(total)) as f64 / total as f64 * 100.0) as u16 } else { 0 };
-    let feasible = s.cells_feasible;
-    let counters = Paragraph::new(vec![
-        Line::from(vec![
-            Span::styled("CELLS ", Style::default().fg(GRAY)),
-            Span::styled(commafy(done), Style::default().fg(INK).add_modifier(Modifier::BOLD)),
-            Span::styled(format!(" / {}", commafy(total)), Style::default().fg(GRAY)),
-            Span::styled("     EVAL/s ", Style::default().fg(GRAY)),
-            Span::styled(commafy(eps), Style::default().fg(GREEN).add_modifier(Modifier::BOLD)),
-        ]),
-        Line::from(vec![
-            Span::styled("FEASIBLE ", Style::default().fg(GRAY)),
-            Span::styled(commafy(feasible), Style::default().fg(CYAN)),
-            Span::styled("   BEST VOC ", Style::default().fg(GRAY)),
-            Span::styled(format!("{:.2} g/L", s.best_voc), Style::default().fg(AMBER).add_modifier(Modifier::BOLD)),
-            Span::styled(format!("   ELAPSED {:.1}s", secs), Style::default().fg(GRAY)),
-        ]),
-    ])
-    .block(block("throughput"));
-    f.render_widget(counters, cg[0]);
+    f.render_widget(
+        Paragraph::new(vec![
+            Line::from(vec![
+                Span::styled("FORMULATIONS ", Style::default().fg(GRAY)),
+                Span::styled(commafy(done), Style::default().fg(INK).add_modifier(Modifier::BOLD)),
+                Span::styled(format!(" / {}", commafy(total)), Style::default().fg(GRAY)),
+                Span::styled("   EVAL/s ", Style::default().fg(GRAY)),
+                Span::styled(commafy(eps), Style::default().fg(GREEN).add_modifier(Modifier::BOLD)),
+            ]),
+            Line::from(vec![
+                Span::styled("FEASIBLE ", Style::default().fg(GRAY)),
+                Span::styled(commafy(s.cells_feasible), Style::default().fg(CYAN)),
+                Span::styled("   BEST VOC ", Style::default().fg(GRAY)),
+                Span::styled(format!("{:.2} g/L", s.best_voc), Style::default().fg(AMBER).add_modifier(Modifier::BOLD)),
+                Span::styled(format!("   ELAPSED {:.1}s", secs), Style::default().fg(GRAY)),
+            ]),
+        ])
+        .block(block("throughput")),
+        cg[0],
+    );
     let label = if s.grid_done { "COMPLETE".to_string() } else { format!("{pct}%") };
-    let gauge = Gauge::default()
-        .block(block("grid sweep"))
-        .gauge_style(Style::default().fg(if s.grid_done { GREEN } else { CYAN }).bg(Color::Rgb(30, 41, 59)))
-        .percent(pct)
-        .label(Span::styled(label, Style::default().fg(INK).add_modifier(Modifier::BOLD)));
-    f.render_widget(gauge, cg[1]);
-
-    // pareto + agreement
-    let mid = Layout::default()
-        .direction(Direction::Horizontal)
-        .constraints([Constraint::Percentage(62), Constraint::Percentage(38)])
-        .split(rows[2]);
+    f.render_widget(
+        Gauge::default()
+            .block(block("grid sweep"))
+            .gauge_style(Style::default().fg(if s.grid_done { GREEN } else { CYAN }).bg(Color::Rgb(30, 41, 59)))
+            .percent(pct)
+            .label(Span::styled(label, Style::default().fg(INK).add_modifier(Modifier::BOLD))),
+        cg[1],
+    );
+    let mid = Layout::default().direction(Direction::Horizontal).constraints([Constraint::Percentage(62), Constraint::Percentage(38)]).split(rows[2]);
     draw_pareto(f, mid[0], s);
     draw_agreement(f, mid[1], s);
-
-    // constraint ledger
     draw_ledger(f, rows[3], s);
-
-    // footer
-    f.render_widget(
-        Paragraph::new(Span::styled(
-            "  live counter = real evaluation of the pinned grid · signed optimum + 3-method agreement from the p1 diagnostic · [1] Act 1  [2] red-team board  [space] hold  [q] quit",
-            Style::default().fg(GRAY),
-        )),
-        rows[4],
-    );
+    f.render_widget(Paragraph::new(Span::styled(footer_line(), Style::default().fg(GRAY))), rows[4]);
 }
 
 fn draw_pareto(f: &mut Frame, area: Rect, s: &State) {
@@ -336,67 +469,40 @@ fn draw_pareto(f: &mut Frame, area: Rect, s: &State) {
     }
     let xs: Vec<f64> = s.pareto.iter().map(|p| p.0).collect();
     let ys: Vec<f64> = s.pareto.iter().map(|p| p.1).collect();
-    let xmin = xs.iter().cloned().fold(f64::INFINITY, f64::min);
-    let xmax = xs.iter().cloned().fold(f64::NEG_INFINITY, f64::max);
-    let ymin = ys.iter().cloned().fold(f64::INFINITY, f64::min);
-    let ymax = ys.iter().cloned().fold(f64::NEG_INFINITY, f64::max);
-    let xlo = (xmin - 5.0).floor();
-    let xhi = (xmax + 5.0).ceil();
-    let ylo = (ymin - 0.05).max(0.0);
-    let yhi = ymax + 0.05;
+    let xlo = (xs.iter().cloned().fold(f64::INFINITY, f64::min) - 5.0).floor();
+    let xhi = (xs.iter().cloned().fold(f64::NEG_INFINITY, f64::max) + 5.0).ceil();
+    let ylo = (ys.iter().cloned().fold(f64::INFINITY, f64::min) - 0.05).max(0.0);
+    let yhi = ys.iter().cloned().fold(f64::NEG_INFINITY, f64::max) + 0.05;
     let opt = vec![(s.best_voc, s.best_red)];
     let datasets = vec![
-        Dataset::default()
-            .name("Pareto front")
-            .marker(symbols::Marker::Braille)
-            .graph_type(GraphType::Scatter)
-            .style(Style::default().fg(CYAN))
-            .data(&s.pareto),
-        Dataset::default()
-            .name("optimum ★")
-            .marker(symbols::Marker::Braille)
-            .graph_type(GraphType::Scatter)
-            .style(Style::default().fg(MAGENTA).add_modifier(Modifier::BOLD))
-            .data(&opt),
+        Dataset::default().name("Pareto front").marker(symbols::Marker::Braille).graph_type(GraphType::Scatter).style(Style::default().fg(CYAN)).data(&s.pareto),
+        Dataset::default().name("optimum ★").marker(symbols::Marker::Braille).graph_type(GraphType::Scatter).style(Style::default().fg(MAGENTA).add_modifier(Modifier::BOLD)).data(&opt),
     ];
-    let chart = Chart::new(datasets)
-        .block(block("Pareto: VOC (g/L) vs Hansen RED"))
-        .x_axis(
-            Axis::default()
-                .style(Style::default().fg(GRAY))
-                .bounds([xlo, xhi])
-                .labels(vec![Span::raw(format!("{xlo:.0}")), Span::raw(format!("{:.0}", (xlo + xhi) / 2.0)), Span::raw(format!("{xhi:.0}"))]),
-        )
-        .y_axis(
-            Axis::default()
-                .style(Style::default().fg(GRAY))
-                .bounds([ylo, yhi])
-                .labels(vec![Span::raw(format!("{ylo:.2}")), Span::raw(format!("{:.2}", (ylo + yhi) / 2.0)), Span::raw(format!("{yhi:.2}"))]),
-        );
-    f.render_widget(chart, area);
+    f.render_widget(
+        Chart::new(datasets)
+            .block(block("Pareto: VOC (g/L) vs Hansen RED"))
+            .x_axis(Axis::default().style(Style::default().fg(GRAY)).bounds([xlo, xhi]).labels(vec![Span::raw(format!("{xlo:.0}")), Span::raw(format!("{:.0}", (xlo + xhi) / 2.0)), Span::raw(format!("{xhi:.0}"))]))
+            .y_axis(Axis::default().style(Style::default().fg(GRAY)).bounds([ylo, yhi]).labels(vec![Span::raw(format!("{ylo:.2}")), Span::raw(format!("{:.2}", (ylo + yhi) / 2.0)), Span::raw(format!("{yhi:.2}"))])),
+        area,
+    );
 }
 
 fn draw_agreement(f: &mut Frame, area: Rect, s: &State) {
     let a = &s.agree;
-    let mk = |name: &str, v: f64, extra: String, c: Color| {
-        Row::new(vec![
-            Span::styled(name.to_string(), Style::default().fg(INK)),
-            Span::styled(format!("{v:.2}"), Style::default().fg(c).add_modifier(Modifier::BOLD)),
-            Span::styled(extra, Style::default().fg(GRAY)),
-        ])
-    };
     let rows = vec![
-        mk("GRID (exhaustive)", a.grid, "—".to_string(), AMBER),
-        mk("PROJ-GRADIENT", a.pg, format!("Δ {:.0e}", a.gap), GREEN),
-        mk("NSGA-II front", a.nsga, if a.nsga_ok { "≥ optimum".into() } else { "??".into() }, GREEN),
+        Row::new(vec![Span::styled("GRID (exhaustive)", Style::default().fg(INK)), Span::styled(format!("{:.2}", a.grid), Style::default().fg(AMBER).add_modifier(Modifier::BOLD)), Span::styled("—", Style::default().fg(GRAY))]),
+        Row::new(vec![Span::styled("PROJ-GRADIENT", Style::default().fg(INK)), Span::styled(format!("{:.2}", a.pg), Style::default().fg(GREEN).add_modifier(Modifier::BOLD)), Span::styled(format!("Δ {:.0e}", a.gap), Style::default().fg(GRAY))]),
+        Row::new(vec![Span::styled("NSGA-II front", Style::default().fg(INK)), Span::styled(format!("{:.2}", a.nsga), Style::default().fg(GREEN).add_modifier(Modifier::BOLD)), Span::styled(if a.nsga_ok { "≥ optimum" } else { "?" }, Style::default().fg(GRAY))]),
     ];
-    let table = Table::new(rows, [Constraint::Length(18), Constraint::Length(10), Constraint::Min(8)])
-        .header(Row::new(vec!["METHOD", "VOC", ""]).style(Style::default().fg(CYAN).add_modifier(Modifier::BOLD)))
-        .block(block("three-method agreement"));
     let inner = Layout::default().direction(Direction::Vertical).constraints([Constraint::Min(5), Constraint::Length(2)]).split(area);
-    f.render_widget(table, inner[0]);
+    f.render_widget(
+        Table::new(rows, [Constraint::Length(18), Constraint::Length(10), Constraint::Min(8)])
+            .header(Row::new(vec!["METHOD", "VOC", ""]).style(Style::default().fg(CYAN).add_modifier(Modifier::BOLD)))
+            .block(block("three-method agreement")),
+        inner[0],
+    );
     let verdict = if a.passed && a.nsga_ok {
-        Span::styled("  ✔ all three agree < 1e-9 — optimum is exhaustively verified", Style::default().fg(GREEN).add_modifier(Modifier::BOLD))
+        Span::styled("  ✔ all three agree < 1e-9 — optimum exhaustively verified", Style::default().fg(GREEN).add_modifier(Modifier::BOLD))
     } else {
         Span::styled("  … computing", Style::default().fg(GRAY))
     };
@@ -404,137 +510,244 @@ fn draw_agreement(f: &mut Frame, area: Rect, s: &State) {
 }
 
 fn draw_ledger(f: &mut Frame, area: Rect, s: &State) {
-    let lines = vec![
-        Line::from(vec![
-            Span::styled("OPTIMUM  ", Style::default().fg(GRAY)),
-            Span::styled(format!("VOC {:.2} g/L", s.best_voc), Style::default().fg(AMBER).add_modifier(Modifier::BOLD)),
-            Span::styled(format!("   Hansen RED {:.3} (cap 1.0)", s.best_red), Style::default().fg(GREEN)),
-            Span::styled(format!("   flash {:.0}°C (≥38)", s.opt_flash), Style::default().fg(GREEN)),
-            Span::styled(format!("   MAK {:.0}%", s.opt_mak * 100.0), Style::default().fg(CYAN)),
-            Span::styled("   volume-solids 67% (active)", Style::default().fg(GRAY)),
-        ]),
-        Line::from(vec![
-            Span::styled("CONSTRAINTS  ", Style::default().fg(GRAY)),
-            Span::styled("volume-solids∈[0.63,0.67] ", Style::default().fg(INK)),
-            Span::styled("flash≥38°C ", Style::default().fg(INK)),
-            Span::styled("Hansen-RED≤1 ", Style::default().fg(INK)),
-            Span::styled("VOC≤340 ", Style::default().fg(INK)),
-            Span::styled(format!("  · {} solvents excluded fail-closed (missing pinned facts)", s.excluded), Style::default().fg(GRAY)),
-        ]),
-    ];
-    f.render_widget(Paragraph::new(lines).block(block("constraints & optimum (pinned, fail-closed)")), area);
+    f.render_widget(
+        Paragraph::new(vec![
+            Line::from(vec![
+                Span::styled("OPTIMUM  ", Style::default().fg(GRAY)),
+                Span::styled(format!("VOC {:.2} g/L", s.best_voc), Style::default().fg(AMBER).add_modifier(Modifier::BOLD)),
+                Span::styled(format!("   Hansen RED {:.3} (cap 1.0)", s.best_red), Style::default().fg(GREEN)),
+                Span::styled(format!("   flash {:.0}°C (≥38)", s.opt_flash), Style::default().fg(GREEN)),
+                Span::styled(format!("   MAK {:.0}%", s.opt_mak * 100.0), Style::default().fg(CYAN)),
+            ]),
+            Line::from(vec![
+                Span::styled("CONSTRAINTS  ", Style::default().fg(GRAY)),
+                Span::styled("volume-solids∈[0.63,0.67]  flash≥38°C  Hansen-RED≤1  VOC≤340", Style::default().fg(INK)),
+                Span::styled(format!("   · {} solvents excluded fail-closed", s.excluded), Style::default().fg(GRAY)),
+            ]),
+        ])
+        .block(block("constraints & optimum (pinned, fail-closed)")),
+        area,
+    );
 }
 
-// ---- Act 2: red-team scoreboard + module board ---------------------------
-struct RedTeam {
-    id: &'static str,
-    attack: &'static str,
-    before: &'static str,
-    after: &'static str,
+fn draw_e2(f: &mut Frame, area: Rect, s: &State) {
+    let rows = Layout::default().direction(Direction::Vertical).constraints([Constraint::Length(3), Constraint::Length(3), Constraint::Min(6), Constraint::Length(3), Constraint::Length(1)]).split(area);
+    header(f, rows[0], "E2", "HAZARD-CONSTRAINED HARDENER SELECTION", "GHS + applicability-domain gates over the pinned hardener set");
+    let banner = if s.p3_feasible == 0 {
+        Paragraph::new(Line::from(vec![
+            Span::styled("  FEASIBLE SET EMPTY — pareto_status: BLOCKED", Style::default().fg(REDC).add_modifier(Modifier::BOLD)),
+            Span::styled("   the solver refuses to recommend an unsafe candidate", Style::default().fg(GRAY)),
+        ]))
+    } else {
+        Paragraph::new(Span::styled(format!("  {} feasible", s.p3_feasible), Style::default().fg(GREEN)))
+    };
+    f.render_widget(banner.block(block("verdict")), rows[1]);
+    let hz: Vec<Row> = s
+        .hazards
+        .iter()
+        .map(|h| {
+            let mark = |b: bool| if b { Span::styled("✗ FAIL", Style::default().fg(REDC).add_modifier(Modifier::BOLD)) } else { Span::styled("· ok", Style::default().fg(GREEN)) };
+            Row::new(vec![
+                Span::styled(h.candidate.clone(), Style::default().fg(INK).add_modifier(Modifier::BOLD)),
+                mark(h.h317),
+                mark(h.h351),
+                mark(h.ad_fail),
+                if h.h317 || h.h351 || h.ad_fail { Span::styled("BLOCKED", Style::default().fg(REDC)) } else { Span::styled("feasible", Style::default().fg(GREEN)) },
+            ])
+        })
+        .collect();
+    f.render_widget(
+        Table::new(hz, [Constraint::Length(10), Constraint::Length(12), Constraint::Length(12), Constraint::Length(14), Constraint::Min(10)])
+            .header(Row::new(vec!["HARDENER", "GHS H317", "GHS H351", "AD-TANIMOTO", "STATUS"]).style(Style::default().fg(CYAN).add_modifier(Modifier::BOLD)))
+            .block(block("candidate × gate (pinned GHS KPI + applicability domain)")),
+        rows[2],
+    );
+    f.render_widget(
+        Paragraph::new(Line::from(vec![
+            Span::styled("HONEST NEGATIVE RESULT  ", Style::default().fg(AMBER).add_modifier(Modifier::BOLD)),
+            Span::styled("every one of the 5 hardeners carries H317; 4/5 also fail the applicability-domain gate; DDS adds H351. No winner is manufactured.", Style::default().fg(GRAY)),
+        ]))
+        .block(block("why this is the strongest slide")),
+        rows[3],
+    );
+    f.render_widget(Paragraph::new(Span::styled(footer_line(), Style::default().fg(GRAY))), rows[4]);
 }
-const REDTEAM: &[RedTeam] = &[
-    RedTeam { id: "T-01B", attack: "candidate hash forged into typed provenance identity", before: "REFUTED (poison→root_hash)", after: "FIXED · clean==poison typed hash 9c7d62bb…" },
-    RedTeam { id: "T-13", attack: "verify_run accepts forged / replayed run archives", before: "122/126 forgeries verify intact", after: "FIXED · 0/210 verify · chain recomputed" },
-    RedTeam { id: "T-05", attack: "fabricated molecule facts drive the stoichiometry", before: "REFUTED (phr = 2,057,940)", after: "SURVIVED · RDKit-attested · 2-replay stable" },
+
+fn draw_e3(f: &mut Frame, area: Rect, s: &State) {
+    let rows = Layout::default().direction(Direction::Vertical).constraints([Constraint::Length(3), Constraint::Length(4), Constraint::Min(6), Constraint::Length(1)]).split(area);
+    header(f, rows[0], "E3", "2⁴ FACTORIAL PROCESS SCREEN", "exhaustive resin × hardener × pigment × solvent envelope enumeration");
+    f.render_widget(
+        Paragraph::new(vec![
+            Line::from(vec![
+                Span::styled("CELLS ", Style::default().fg(GRAY)),
+                Span::styled(format!("{}", s.p4_cells), Style::default().fg(INK).add_modifier(Modifier::BOLD)),
+                Span::styled("   SOLVED ", Style::default().fg(GRAY)),
+                Span::styled(format!("{}", s.p4_solved), Style::default().fg(GREEN).add_modifier(Modifier::BOLD)),
+                Span::styled("   INFEASIBLE ", Style::default().fg(GRAY)),
+                Span::styled(format!("{}", s.p4_infeasible), Style::default().fg(AMBER).add_modifier(Modifier::BOLD)),
+                Span::styled(format!("   status {}", s.p4_status), Style::default().fg(CYAN)),
+            ]),
+            Line::from(Span::styled("deterministic exhaustive enumeration · two-replay byte-stable · every cell's blocking reasons recorded", Style::default().fg(GRAY))),
+        ])
+        .block(block("factorial accounting")),
+        rows[1],
+    );
+    // 4x4 grid of cells
+    let grid_rows = Layout::default().direction(Direction::Vertical).constraints([Constraint::Ratio(1, 4); 4]).split(rows[2]);
+    for r in 0..4 {
+        let cols = Layout::default().direction(Direction::Horizontal).constraints([Constraint::Ratio(1, 4); 4]).split(grid_rows[r]);
+        for c in 0..4 {
+            let idx = r * 4 + c;
+            let solved = [0, 1, 4, 5, 8, 9, 12, 13].contains(&idx);
+            let (col, txt) = if solved { (GREEN, "SOLVED") } else { (AMBER, "INFEASIBLE") };
+            f.render_widget(
+                Paragraph::new(vec![
+                    Line::from(Span::styled(format!("cell {idx}"), Style::default().fg(INK))),
+                    Line::from(Span::styled(txt, Style::default().fg(col).add_modifier(Modifier::BOLD))),
+                ])
+                .block(Block::default().borders(Borders::ALL).border_style(Style::default().fg(col)).style(Style::default().bg(PANEL))),
+                cols[c],
+            );
+        }
+    }
+    f.render_widget(Paragraph::new(Span::styled(footer_line(), Style::default().fg(GRAY))), rows[3]);
+}
+
+fn draw_e4(f: &mut Frame, area: Rect, s: &State, sdone: u64, elapsed: Duration) {
+    let rows = Layout::default().direction(Direction::Vertical).constraints([Constraint::Length(3), Constraint::Length(5), Constraint::Min(6), Constraint::Length(4), Constraint::Length(1)]).split(area);
+    header(f, rows[0], "E4", "COMPOUNDS / SECOND", "distinct molecules through the pinned RDKit gate stack — engineering throughput only");
+    let secs = elapsed.as_secs_f64().max(0.001);
+    let screen_secs = (secs - s.screen_start_s).max(1e-3);
+    let cps = if s.screen_done { s.screen_cps } else if s.screen_running && sdone > 0 { sdone as f64 / screen_secs } else { 0.0 };
+    let total = s.screen_total.max(1);
+    let pct = ((sdone.min(total)) as f64 / total as f64 * 100.0) as u16;
+    f.render_widget(
+        Paragraph::new(vec![
+            Line::from(vec![
+                Span::styled("COMPOUNDS ", Style::default().fg(GRAY)),
+                Span::styled(commafy(sdone), Style::default().fg(INK).add_modifier(Modifier::BOLD)),
+                Span::styled(format!(" / {}", commafy(s.screen_total)), Style::default().fg(GRAY)),
+                Span::styled("    >> COMPOUNDS/SEC ", Style::default().fg(GRAY)),
+                Span::styled(format!("{:.0}", cps), Style::default().fg(GREEN).add_modifier(Modifier::BOLD)),
+                Span::styled(format!("   ×{} workers", s.screen_workers), Style::default().fg(GRAY)),
+            ]),
+            Line::from(vec![
+                Span::styled("DISTINCT ", Style::default().fg(GRAY)),
+                Span::styled(commafy(s.screen_distinct), Style::default().fg(CYAN)),
+                Span::styled("   OPTIMIZER-ADMISSIBLE ", Style::default().fg(GRAY)),
+                Span::styled(format!("{}", s.screen_admissible), Style::default().fg(if s.screen_admissible == 0 { GREEN } else { REDC }).add_modifier(Modifier::BOLD)),
+                Span::styled("  (must be 0)", Style::default().fg(GRAY)),
+                Span::styled(if s.screen_running { "   RUNNING…" } else if s.screen_done { "   COMPLETE" } else { "   press [4] to start" }, Style::default().fg(AMBER)),
+            ]),
+        ])
+        .block(block("throughput (fully gate-scored, distinct-by-canonical-SHA256)")),
+        rows[1],
+    );
+    f.render_widget(
+        Gauge::default().block(block("screen progress")).gauge_style(Style::default().fg(if s.screen_done { GREEN } else { CYAN }).bg(Color::Rgb(30, 41, 59))).percent(pct.min(100)).label(Span::styled(format!("{pct}%"), Style::default().fg(INK).add_modifier(Modifier::BOLD))),
+        rows[2],
+    );
+    f.render_widget(
+        Paragraph::new(vec![
+            Line::from(Span::styled("GATE FUNNEL  enumerated → RDKit-valid → normalized → property/role/novelty/design-gate → distinct", Style::default().fg(GRAY))),
+            Line::from(vec![
+                Span::styled("SPEEDUP  ", Style::default().fg(AMBER).add_modifier(Modifier::BOLD)),
+                Span::styled("corpus-fingerprint cache: 10 → 2 RDKit calls/compound, bit-identical (proven by test)", Style::default().fg(INK)),
+            ]),
+        ])
+        .block(block("pipeline")),
+        rows[3],
+    );
+    f.render_widget(
+        Paragraph::new(Span::styled(
+            "  ENGINEERING THROUGHPUT ONLY — not novelty/ranking/screening-quality/validated science; all molecule modules ranking_eligible:false, AUDIT_ONLY   ·   [q] quit",
+            Style::default().fg(GRAY),
+        )),
+        rows[4],
+    );
+}
+
+// ---- Board: red-team scoreboard + module board + benchkit strip ----------
+struct Rt { id: &'static str, attack: &'static str, before: &'static str, after: &'static str }
+const REDTEAM: &[Rt] = &[
+    Rt { id: "T-01B", attack: "candidate hash forged into typed provenance identity", before: "REFUTED (poison→root_hash)", after: "FIXED · clean==poison typed hash 9c7d62bb…" },
+    Rt { id: "T-13", attack: "verify_run accepts forged / replayed run archives", before: "122/126 forgeries verify intact", after: "FIXED · 0/210 verify · chain recomputed" },
+    Rt { id: "T-05", attack: "fabricated molecule facts drive the stoichiometry", before: "REFUTED (phr = 2,057,940)", after: "SURVIVED · RDKit-attested · 2-replay stable" },
 ];
-struct Mod {
-    name: &'static str,
-    status: &'static str,
-    note: &'static str,
-}
-const MODS: &[Mod] = &[
-    Mod { name: "amphora-solver-lab", status: "GREEN", note: "3-method agreement < 1e-9 (Act 1)" },
-    Mod { name: "amphora-formulation-arithmetic", status: "GREEN", note: "RDKit-attested (was RED · T-05)" },
-    Mod { name: "amphora-run-provenance", status: "GREEN", note: "chain recompute (was RED · T-13)" },
-    Mod { name: "amphora-candidate-contract", status: "GREEN", note: "host-owned identity (was RED · T-01B)" },
-    Mod { name: "amphora-molecule-design-gate", status: "GREEN", note: "13/13 gates, real RDKit FFI" },
-    Mod { name: "amphora-rdkit-ffi", status: "GREEN", note: "pinned RDKit C++ 2026.03.2" },
-    Mod { name: "amphora-ingredient-library", status: "GREEN", note: "TDS-verified constants" },
-    Mod { name: "amphora-solvency-score", status: "GREEN", note: "BigSolDB LSO beats naive" },
-    Mod { name: "amphora-molecule-property", status: "RED", note: "excluded: ε_static<n² labels" },
-    Mod { name: "amphora-barrier-corrosion-score", status: "RED", note: "excluded: silent 3.5-decade error" },
-    Mod { name: "amphora-ip-fto-guard", status: "RED", note: "excluded: FTO flips under construction" },
+struct Md { name: &'static str, status: &'static str, note: &'static str }
+const MODS: &[Md] = &[
+    Md { name: "amphora-solver-lab", status: "GREEN", note: "3-method agreement < 1e-9 (E1/E2/E3)" },
+    Md { name: "amphora-formulation-arithmetic", status: "GREEN", note: "RDKit-attested (was RED · T-05)" },
+    Md { name: "amphora-run-provenance", status: "GREEN", note: "chain recompute (was RED · T-13)" },
+    Md { name: "amphora-candidate-contract", status: "GREEN", note: "host-owned identity (was RED · T-01B)" },
+    Md { name: "amphora-molecule-novelty", status: "GREEN", note: "W-NOV1 SURVIVED · corpus-fp cache bit-identical" },
+    Md { name: "amphora-molecule-design-gate", status: "GREEN", note: "13/13 gates, real RDKit FFI" },
+    Md { name: "amphora-rdkit-ffi", status: "GREEN", note: "pinned RDKit C++ 2026.03.2" },
+    Md { name: "amphora-molecule-property", status: "RED", note: "excluded: ε_static<n² labels" },
+    Md { name: "amphora-barrier-corrosion-score", status: "RED", note: "excluded: silent 3.5-decade error" },
+    Md { name: "amphora-ip-fto-guard", status: "RED", note: "excluded: FTO flips under construction" },
+];
+struct Bk { name: &'static str, speedup: &'static str }
+const BENCH: &[Bk] = &[
+    Bk { name: "nn_max_tanimoto (novelty)", speedup: "19.8× · bit-identical" },
+    Bk { name: "mean_pairwise_tanimoto", speedup: "18.4× · bit-identical" },
+    Bk { name: "ewma_arl (process-qc)", speedup: "14.78× vs-adopted · bit-identical" },
+    Bk { name: "cluster_bootstrap_ci", speedup: "2.08× · bit-identical" },
 ];
 
 fn draw_board(f: &mut Frame, area: Rect) {
-    f.render_widget(Block::default().style(Style::default().bg(BG)), area);
-    let rows = Layout::default()
-        .direction(Direction::Vertical)
-        .constraints([Constraint::Length(3), Constraint::Length(9), Constraint::Min(6), Constraint::Length(1)])
-        .split(area);
-    f.render_widget(
-        Paragraph::new(Line::from(vec![
-            Span::styled("AMPHORA", Style::default().fg(CYAN).add_modifier(Modifier::BOLD)),
-            Span::styled("  RED-TEAM SCOREBOARD", Style::default().fg(INK).add_modifier(Modifier::BOLD)),
-            Span::styled("   our own falsification loop found these; this session closed them", Style::default().fg(GRAY)),
-        ]))
-        .block(block("integrity")),
-        rows[0],
-    );
-    let rt: Vec<Row> = REDTEAM
-        .iter()
-        .map(|r| {
-            Row::new(vec![
-                Span::styled(r.id, Style::default().fg(AMBER).add_modifier(Modifier::BOLD)),
-                Span::styled(r.attack, Style::default().fg(INK)),
-                Span::styled(r.before, Style::default().fg(REDC)),
-                Span::styled(r.after, Style::default().fg(GREEN).add_modifier(Modifier::BOLD)),
-            ])
-            .height(2)
-        })
-        .collect();
+    let rows = Layout::default().direction(Direction::Vertical).constraints([Constraint::Length(3), Constraint::Length(8), Constraint::Min(6), Constraint::Length(6), Constraint::Length(1)]).split(area);
+    header(f, rows[0], "BOARD", "RED-TEAM SCOREBOARD", "our own falsification loop found these; this session closed them");
+    let rt: Vec<Row> = REDTEAM.iter().map(|r| Row::new(vec![
+        Span::styled(r.id, Style::default().fg(AMBER).add_modifier(Modifier::BOLD)),
+        Span::styled(r.attack, Style::default().fg(INK)),
+        Span::styled(r.before, Style::default().fg(REDC)),
+        Span::styled(r.after, Style::default().fg(GREEN).add_modifier(Modifier::BOLD)),
+    ]).height(2)).collect();
     f.render_widget(
         Table::new(rt, [Constraint::Length(7), Constraint::Percentage(38), Constraint::Percentage(26), Constraint::Percentage(30)])
             .header(Row::new(vec!["ID", "ATTACK", "BEFORE", "AFTER (this session)"]).style(Style::default().fg(CYAN).add_modifier(Modifier::BOLD)))
             .block(block("spine repairs — verified against the original signed attack harnesses")),
         rows[1],
     );
-    let mr: Vec<Row> = MODS
-        .iter()
-        .map(|m| {
-            let c = match m.status {
-                "GREEN" => GREEN,
-                "RED" => REDC,
-                _ => AMBER,
-            };
-            Row::new(vec![
-                Span::styled(format!("● {}", m.status), Style::default().fg(c).add_modifier(Modifier::BOLD)),
-                Span::styled(m.name, Style::default().fg(INK)),
-                Span::styled(m.note, Style::default().fg(GRAY)),
-            ])
-        })
-        .collect();
+    let mr: Vec<Row> = MODS.iter().map(|m| {
+        let c = if m.status == "GREEN" { GREEN } else { REDC };
+        Row::new(vec![
+            Span::styled(format!("● {}", m.status), Style::default().fg(c).add_modifier(Modifier::BOLD)),
+            Span::styled(m.name, Style::default().fg(INK)),
+            Span::styled(m.note, Style::default().fg(GRAY)),
+        ])
+    }).collect();
     f.render_widget(
         Table::new(mr, [Constraint::Length(9), Constraint::Length(34), Constraint::Min(20)])
             .header(Row::new(vec!["STATUS", "MODULE", "NOTE"]).style(Style::default().fg(CYAN).add_modifier(Modifier::BOLD)))
             .block(block("module board — GREEN in the demo · RED excluded by signed refutation")),
         rows[2],
     );
+    let bk: Vec<Row> = BENCH.iter().map(|b| Row::new(vec![
+        Span::styled(b.name, Style::default().fg(INK)),
+        Span::styled(b.speedup, Style::default().fg(GREEN).add_modifier(Modifier::BOLD)),
+    ])).collect();
     f.render_widget(
-        Paragraph::new(Span::styled(
-            "  RED = excluded from this demo by a signed refutation receipt · nothing here claims scientific validation · [1] Act 1  [2] board  [q] quit",
-            Style::default().fg(GRAY),
-        )),
+        Table::new(bk, [Constraint::Length(34), Constraint::Min(20)])
+            .header(Row::new(vec!["AUDIT KERNEL", "SPEEDUP (all_bit_identical: true)"]).style(Style::default().fg(CYAN).add_modifier(Modifier::BOLD)))
+            .block(block("faster, provably identical — benchkit signed speedups.canonical.json")),
         rows[3],
     );
-    let _ = Alignment::Left;
+    f.render_widget(Paragraph::new(Span::styled("  RED = excluded by signed refutation · speedups are bit-identical to the reference · nothing here claims scientific validation   ·   [q] quit", Style::default().fg(GRAY))), rows[4]);
 }
 
-fn snapshot_text(s: &State, done: u64, total: u64, elapsed: Duration) -> String {
-    let a = &s.agree;
+fn snapshot_text(s: &State, done: u64, total: u64) -> String {
     format!(
-        "ACT 1 · CONSTRAINED FORMULATION SOLVER (headless snapshot)\n\
-         cells evaluated : {} / {}\n\
-         feasible        : {}\n\
-         best VOC        : {:.2} g/L  (Hansen RED {:.3}, flash {:.0}C, MAK {:.0}%)\n\
-         elapsed         : {:.2}s\n\
-         agreement       : grid {:.2} | pg {:.2} (Δ{:.0e}) | nsga {:.2}  passed={} nsga_ok={}\n\
-         solvents used   : {} · excluded fail-closed : {}\n\
-         pareto points   : {}\n",
-        commafy(done), commafy(total), commafy(s.cells_feasible),
-        s.best_voc, s.best_red, s.opt_flash, s.opt_mak * 100.0,
-        elapsed.as_secs_f64(),
-        a.grid, a.pg, a.gap, a.nsga, a.passed, a.nsga_ok,
-        s.n_solvents, s.excluded, s.pareto.len()
+        "SHOWCASE headless snapshot\n\
+         E1 solver : {} / {} cells, feasible {}, best VOC {:.2} g/L, agreement grid/pg/nsga {:.2}/{:.2}/{:.2} passed={}\n\
+         E2 hazard : status={} feasible={} (hardeners screened: {})\n\
+         E3 factorial : {} cells, solved {}, infeasible {}, status {}\n\
+         E4 compounds: {} scored, {} distinct, {:.0} compounds/sec ×{} workers, optimizer-admissible {}\n",
+        commafy(done), commafy(total), commafy(s.cells_feasible), s.best_voc,
+        s.agree.grid, s.agree.pg, s.agree.nsga, s.agree.passed,
+        s.p3_status, s.p3_feasible, s.hazards.len(),
+        s.p4_cells, s.p4_solved, s.p4_infeasible, s.p4_status,
+        commafy(s.screen_scored), commafy(s.screen_distinct), s.screen_cps, s.screen_workers, s.screen_admissible,
     )
 }

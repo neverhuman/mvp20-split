@@ -1170,7 +1170,7 @@ fn main() -> Result<()> {
                 ShowScale::L => showcase::Scale::L,
                 ShowScale::Xl => showcase::Scale::Xl,
             };
-            showcase::run_showcase(scale, args.autopilot, args.headless)
+            showcase::run_showcase(&root, scale, args.autopilot, args.headless)
         }
         Command::Screen(args) => screen::run_cli(&root, args.target, args.workers, args.n_max, args.prescreen),
         Command::Inspect(args) => run(
