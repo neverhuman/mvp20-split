@@ -1216,21 +1216,68 @@ pub fn verify_run(path: impl AsRef<Path>) -> Result<String, RunArchiveError> {
     let events_bytes = fs::read(path.join("events.jsonl"))?;
     let final_state: Value = serde_json::from_slice(&fs::read(path.join("final-state.json"))?)?;
     let events = read_events(path.join("events.jsonl"))?;
-    if events
-        .iter()
-        .enumerate()
-        .any(|(index, event)| event.sequence != index as u64 + 1)
-    {
+
+    // T-13: bind the run to its identity. The old check took run_id from the
+    // provenance file itself and trusted each event's stored event_hash, so a
+    // self-consistent forgery -- or a verbatim copy of another run's directory
+    // -- verified clean. Identity is now the archive directory name, which the
+    // provenance and every event must match.
+    let provenance_run_id = provenance
+        .get("run_id")
+        .and_then(Value::as_str)
+        .ok_or_else(|| RunArchiveError::Integrity("provenance missing run_id".into()))?;
+    let dir_run_id = path
+        .file_name()
+        .and_then(|name| name.to_str())
+        .ok_or_else(|| {
+            RunArchiveError::Integrity("run archive path has no directory name".into())
+        })?;
+    if provenance_run_id != dir_run_id {
         return Err(RunArchiveError::Integrity(
-            "non-contiguous event sequence".into(),
+            "provenance run_id does not match archive directory".into(),
         ));
     }
-    let event_chain_root = events
-        .last()
-        .map(|event| event.event_hash.clone())
-        .unwrap_or_else(|| raw_sha256(&[]));
+
+    // T-13: recompute every event_hash from the exact append() seed, chaining
+    // previous_event_hash to the *recomputed* prior hash (never the stored one)
+    // and binding each event to this run's identity and schema. The stored
+    // event_hash is treated as an untrusted claim to be reproduced, not read.
+    let mut previous_event_hash: Option<String> = None;
+    for (index, event) in events.iter().enumerate() {
+        if event.sequence != index as u64 + 1 {
+            return Err(RunArchiveError::Integrity(
+                "non-contiguous event sequence".into(),
+            ));
+        }
+        if event.schema != "amphora.tui-event.v1" {
+            return Err(RunArchiveError::Integrity("unexpected event schema".into()));
+        }
+        if event.run_id != provenance_run_id {
+            return Err(RunArchiveError::Integrity(
+                "event run_id does not match run identity".into(),
+            ));
+        }
+        let seed = serde_json::json!({
+            "schema": "amphora.tui-event.v1",
+            "sequence": event.sequence,
+            "run_id": event.run_id,
+            "event_type": event.event_type,
+            "candidate_id": event.candidate_id,
+            "generation": event.generation,
+            "payload": event.payload,
+            "previous_event_hash": previous_event_hash,
+        });
+        let recomputed = stable_hash(&seed);
+        if recomputed != event.event_hash {
+            return Err(RunArchiveError::Integrity(
+                "event hash chain mismatch".into(),
+            ));
+        }
+        previous_event_hash = Some(recomputed);
+    }
+    let event_chain_root = previous_event_hash.unwrap_or_else(|| raw_sha256(&[]));
     let expected = serde_json::json!({
-        "run_id": provenance.get("run_id"),
+        "run_id": provenance_run_id,
         "manifest_sha256": raw_sha256(&manifest),
         "events_sha256": raw_sha256(&events_bytes),
         "event_chain_root": event_chain_root,
