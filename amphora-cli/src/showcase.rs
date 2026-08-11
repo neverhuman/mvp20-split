@@ -24,7 +24,7 @@ use ratatui::{
 use serde_json::Value;
 use std::io::{self, IsTerminal};
 use std::path::Path;
-use std::sync::atomic::{AtomicU64, Ordering};
+use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
 use std::sync::{Arc, Mutex};
 use std::thread;
 use std::time::{Duration, Instant};
@@ -138,6 +138,7 @@ struct State {
     screen_modules: Vec<(String, u64, u64)>,
     p4_solved_cells: Vec<bool>,
     modules: Vec<ModRow>,
+    sim_running: bool,
 }
 
 fn binom(n: u128, k: u128) -> u128 {
@@ -321,30 +322,75 @@ pub fn run_showcase(root: &Path, scale: Scale, autopilot: bool, headless: bool) 
     let total_cells = binom((units + 5) as u128, 5) as u64;
     let state = Arc::new(Mutex::new(State::default()));
     let progress = Arc::new(AtomicU64::new(0)); // E1 grid cells
-    let (grid_tx, grid_rx) = std::sync::mpsc::sync_channel::<GridDelta>(256);
     state.lock().unwrap().incumbent_voc = f64::INFINITY;
     let screen_prog = Arc::new(AtomicU64::new(0)); // E4 compounds
+    let running = Arc::new(AtomicBool::new(true)); // simulation runs by default
     let started = Instant::now();
 
-    // Background: E1 authoritative + E2/E3, then the E1 live grid.
+    // Background: load the fixed panels once, then solve CONTINUOUSLY. Each cycle
+    // re-runs the real grid sweep (counter + feasible scatter re-animate); the
+    // best formula and convergence persist. `running` pauses it -- the run flag is
+    // checked between chunks so a pause engages within a chunk, mid-sweep.
     {
         let state = state.clone();
         let progress = progress.clone();
+        let running = running.clone();
         thread::spawn(move || {
             let _ = load_e1(&state);
             load_e2(&state);
             load_e3(&state);
             load_modules(&state);
-            if let Ok(g) = showcase_grid(units, &progress, Some(&grid_tx)) {
-                let mut s = state.lock().unwrap();
-                s.cells_total = g.cells_total;
-                s.cells_feasible = g.cells_feasible;
-                s.n_solvents = g.n_solvents;
-                if g.best_voc.is_finite() {
-                    s.best_voc = g.best_voc;
-                    s.best_red = g.best_red;
+            loop {
+                while !running.load(Ordering::Relaxed) {
+                    thread::sleep(Duration::from_millis(80));
                 }
-                s.grid_done = true;
+                progress.store(0, Ordering::Relaxed);
+                {
+                    let mut s = state.lock().unwrap();
+                    s.live_scatter.clear();
+                    s.grid_done = false;
+                    s.cells_feasible = 0;
+                }
+                let on_delta = {
+                    let state = state.clone();
+                    let progress = progress.clone();
+                    move |d: GridDelta| {
+                        let cells = progress.load(Ordering::Relaxed);
+                        let mut st = state.lock().unwrap();
+                        for pt in &d.new_samples {
+                            if st.live_scatter.len() < 800 {
+                                st.live_scatter.push((pt.0 as f64, pt.1 as f64));
+                            }
+                        }
+                        if d.chunk_best_voc < st.incumbent_voc {
+                            st.incumbent_voc = d.chunk_best_voc;
+                            st.incumbent_red = d.chunk_best_red;
+                            st.incumbent_blend = d.chunk_best_blend;
+                            st.convergence.push((cells as f64, d.chunk_best_voc));
+                            if st.convergence.len() > 2000 {
+                                st.convergence.remove(0);
+                            }
+                        }
+                    }
+                };
+                if let Ok(g) = showcase_grid(units, &progress, Some(&on_delta), &running) {
+                    let mut s = state.lock().unwrap();
+                    s.cells_total = g.cells_total;
+                    s.cells_feasible = g.cells_feasible;
+                    s.n_solvents = g.n_solvents;
+                    if g.best_voc.is_finite() {
+                        s.best_voc = g.best_voc;
+                        s.best_red = g.best_red;
+                    }
+                    s.grid_done = true;
+                }
+                // brief, pausable hold so the completed sweep is readable
+                for _ in 0..18 {
+                    if !running.load(Ordering::Relaxed) {
+                        break;
+                    }
+                    thread::sleep(Duration::from_millis(100));
+                }
             }
         });
     }
@@ -368,7 +414,6 @@ pub fn run_showcase(root: &Path, scale: Scale, autopilot: bool, headless: bool) 
     let backend = CrosstermBackend::new(stdout);
     let mut terminal = Terminal::new(backend)?;
     let mut ex = Ex::E1;
-    let mut cells_seen: u64 = 0;
     let mut ex_since = Instant::now();
     let mut screen_started = false;
     let res = (|| -> Result<()> {
@@ -378,26 +423,12 @@ pub fn run_showcase(root: &Path, scale: Scale, autopilot: bool, headless: bool) 
                 screen_started = true;
                 launch_screen(&root, &state, &screen_prog, started.elapsed().as_secs_f64());
             }
-            for d in grid_rx.try_iter() {
-                cells_seen += d.cells_done_delta;
-                let mut st = state.lock().unwrap();
-                for pt in &d.new_samples {
-                    if st.live_scatter.len() < 800 {
-                        st.live_scatter.push((pt.0 as f64, pt.1 as f64));
-                    }
-                }
-                if d.chunk_best_voc < st.incumbent_voc {
-                    st.incumbent_voc = d.chunk_best_voc;
-                    st.incumbent_red = d.chunk_best_red;
-                    st.incumbent_blend = d.chunk_best_blend;
-                    st.convergence.push((cells_seen as f64, d.chunk_best_voc));
-                }
-            }
             let done = progress.load(Ordering::Relaxed);
             let sdone = screen_prog.load(Ordering::Relaxed);
             let elapsed = started.elapsed();
             {
-                let s = state.lock().unwrap();
+                let mut s = state.lock().unwrap();
+                s.sim_running = running.load(Ordering::Relaxed);
                 terminal.draw(|f| draw(f, &s, ex, done, total_cells, sdone, elapsed))?;
             }
             if event::poll(Duration::from_millis(60))? {
@@ -410,7 +441,10 @@ pub fn run_showcase(root: &Path, scale: Scale, autopilot: bool, headless: bool) 
                         KeyCode::Char('4') => ex = Ex::E4,
                         KeyCode::Char('5') => ex = Ex::E5,
                         KeyCode::Char('6') => ex = Ex::Board,
-                        KeyCode::Char(' ') => ex_since = Instant::now(),
+                        KeyCode::Char(' ') => {
+                            let now = running.load(Ordering::Relaxed);
+                            running.store(!now, Ordering::Relaxed);
+                        }
                         _ => {}
                     }
                 }
@@ -502,7 +536,7 @@ fn header(f: &mut Frame, area: Rect, tag: &str, title: &str, sub: &str) {
 }
 
 fn footer_line() -> &'static str {
-    "  [1] solver  [2] hazard  [3] factorial  [4] compounds/sec  [5] submodels  [6] board  ·  [space] hold  [q] quit"
+    "  [1] solver  [2] hazard  [3] factorial  [4] compounds/sec  [5] submodels  [6] board  ·  [space] pause/continue  [q] quit"
 }
 
 fn draw(f: &mut Frame, s: &State, ex: Ex, done: u64, total: u64, sdone: u64, elapsed: Duration) {
@@ -543,7 +577,10 @@ fn draw_e1(f: &mut Frame, area: Rect, s: &State, done: u64, total: u64, elapsed:
                 Span::styled(format!("{:.2} g/L", if s.incumbent_voc.is_finite() { s.incumbent_voc } else { s.best_voc }), Style::default().fg(if s.grid_done { GREEN } else { AMBER }).add_modifier(Modifier::BOLD)),
                 Span::styled("   BEST FORMULA ", Style::default().fg(GRAY)),
                 Span::styled(blend_str(&s.incumbent_blend), Style::default().fg(CYAN).add_modifier(Modifier::BOLD)),
-                Span::styled(format!("   ELAPSED {:.1}s", secs), Style::default().fg(GRAY)),
+                Span::styled(
+                    if s.sim_running { "   ▶ SIMULATING" } else { "   ⏸ PAUSED [space]" },
+                    Style::default().fg(if s.sim_running { GREEN } else { AMBER }).add_modifier(Modifier::BOLD),
+                ),
             ]),
         ])
         .block(block("throughput")),
@@ -589,8 +626,8 @@ fn draw_pareto(f: &mut Frame, area: Rect, s: &State) {
     f.render_widget(
         Chart::new(datasets)
             .block(block(title))
-            .x_axis(Axis::default().style(Style::default().fg(GRAY)).bounds([xlo, xhi]).labels(vec![Span::raw(format!("{xlo:.0}")), Span::raw(format!("{:.0}", (xlo + xhi) / 2.0)), Span::raw(format!("{xhi:.0}"))]))
-            .y_axis(Axis::default().style(Style::default().fg(GRAY)).bounds([ylo, yhi]).labels(vec![Span::raw(format!("{ylo:.2}")), Span::raw(format!("{:.2}", (ylo + yhi) / 2.0)), Span::raw(format!("{yhi:.2}"))])),
+            .x_axis(Axis::default().title(Span::styled("VOC (g/L) →", Style::default().fg(CYAN))).style(Style::default().fg(GRAY)).bounds([xlo, xhi]).labels(vec![Span::raw(format!("{xlo:.0}")), Span::raw(format!("{:.0}", (xlo + xhi) / 2.0)), Span::raw(format!("{xhi:.0}"))]))
+            .y_axis(Axis::default().title(Span::styled("Hansen RED ↑", Style::default().fg(CYAN))).style(Style::default().fg(GRAY)).bounds([ylo, yhi]).labels(vec![Span::raw(format!("{ylo:.2}")), Span::raw(format!("{:.2}", (ylo + yhi) / 2.0)), Span::raw(format!("{yhi:.2}"))])),
         area,
     );
 }
@@ -621,8 +658,8 @@ fn draw_convergence(f: &mut Frame, area: Rect, s: &State) {
     f.render_widget(
         Chart::new(datasets)
             .block(block("convergence: best VOC (g/L) vs cells swept ↓"))
-            .x_axis(Axis::default().style(Style::default().fg(GRAY)).bounds([0.0, xmax]).labels(vec![Span::raw("0"), Span::raw(commafy(xmax as u64))]))
-            .y_axis(Axis::default().style(Style::default().fg(GRAY)).bounds([ylo, yhi]).labels(vec![Span::raw(format!("{ylo:.0}")), Span::raw(format!("{yhi:.0}"))])),
+            .x_axis(Axis::default().title(Span::styled("cells swept →", Style::default().fg(CYAN))).style(Style::default().fg(GRAY)).bounds([0.0, xmax]).labels(vec![Span::raw("0"), Span::raw(commafy(xmax as u64))]))
+            .y_axis(Axis::default().title(Span::styled("best VOC (g/L)", Style::default().fg(CYAN))).style(Style::default().fg(GRAY)).bounds([ylo, yhi]).labels(vec![Span::raw(format!("{ylo:.0}")), Span::raw(format!("{yhi:.0}"))])),
         area,
     );
 }

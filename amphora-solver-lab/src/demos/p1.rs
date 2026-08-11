@@ -508,7 +508,7 @@ pub fn diagnostic() -> Result<Value> {
 // the p1 signed receipt bytes are unchanged.
 // ============================================================================
 use rayon::prelude::*;
-use std::sync::atomic::{AtomicU64, Ordering};
+use std::sync::atomic::{AtomicBool, AtomicU64, Ordering};
 
 /// Result of a live scaled grid sweep for the Act 1 panel.
 /// Live per-chunk optimization delta streamed to the showcase UI (display-only;
@@ -580,7 +580,8 @@ fn showcase_blend_inputs() -> Result<(Vec<Solvent>, [f64; 3], f64)> {
 pub fn showcase_grid(
     units: usize,
     progress: &AtomicU64,
-    live: Option<&std::sync::mpsc::SyncSender<GridDelta>>,
+    on_delta: Option<&(dyn Fn(GridDelta) + Sync)>,
+    run_flag: &AtomicBool,
 ) -> Result<ShowcaseGrid> {
     let (solvents, center, radius) = showcase_blend_inputs()?;
     let n = solvents.len();
@@ -588,6 +589,9 @@ pub fn showcase_grid(
     let parts: Vec<(u64, u64, f64, f64, Vec<(f32, f32)>)> = (0..=units)
         .into_par_iter()
         .map(|k0| {
+            if !run_flag.load(Ordering::Relaxed) {
+                return (0u64, 0u64, f64::INFINITY, 0.0_f64, Vec::new());
+            }
             let mut total = 0u64;
             let mut feas = 0u64;
             let mut best_voc = f64::INFINITY;
@@ -623,10 +627,8 @@ pub fn showcase_grid(
                 }
             });
             progress.fetch_add(total, Ordering::Relaxed);
-            if let Some(tx) = live {
-                // try_send drops when the bounded channel is full -> natural
-                // throttle; compute never blocks on the UI.
-                let _ = tx.try_send(GridDelta {
+            if let Some(cb) = on_delta {
+                cb(GridDelta {
                     cells_done_delta: total,
                     chunk_best_voc: best_voc,
                     chunk_best_red: best_red,
