@@ -1015,7 +1015,84 @@ struct NoveltyComparison {
     exact_structure_match: bool,
 }
 
+/// Fingerprints of the pinned novelty corpus, computed ONCE per process. The
+/// corpus is candidate-independent, so re-fingerprinting all 8 entries on every
+/// scored candidate (the previous behaviour) was pure repeated work: ~10 RDKit
+/// calls per compound collapse to ~2. The per-entry structure-hash guard that
+/// used to run per candidate now runs once here; on backend-unavailable or a
+/// hash mismatch the cache holds the Err and every caller abstains, exactly as
+/// the per-entry path did on its first entry. Fingerprint values are unchanged,
+/// so every downstream novelty field is byte-identical (see the identity test).
+fn novelty_corpus_fingerprints() -> Result<&'static Vec<MorganFingerprintV1>, String> {
+    static FPS: LazyLock<Result<Vec<MorganFingerprintV1>, String>> = LazyLock::new(|| {
+        let corpus = novelty_corpus()?;
+        let mut out = Vec::with_capacity(corpus.entries.len());
+        for entry in &corpus.entries {
+            let fp = morgan_fingerprint(&entry.canonical_isomeric_smiles)
+                .map_err(|error| error.to_string())?;
+            if fp.canonical_structure_sha256 != entry.canonical_structure_sha256 {
+                return Err(format!(
+                    "novelty corpus structure hash mismatch for {}",
+                    entry.structure_id
+                ));
+            }
+            out.push(fp);
+        }
+        Ok(out)
+    });
+    FPS.as_ref().map_err(Clone::clone)
+}
+
 fn compare_novelty_corpus(
+    candidate: &MorganFingerprintV1,
+    corpus: &NoveltyCorpusV1,
+) -> Result<NoveltyComparison, String> {
+    let references = novelty_corpus_fingerprints()?;
+    debug_assert_eq!(references.len(), corpus.entries.len());
+    let mut maximum_similarity = -1.0_f64;
+    let mut maximum_scaffold_similarity = -1.0_f64;
+    let mut nearest_structure_id = String::new();
+    let mut exact_structure_match = false;
+    for (entry, reference) in corpus.entries.iter().zip(references.iter()) {
+        let similarity = fingerprint_tanimoto(&candidate.on_bits, &reference.on_bits)
+            .ok_or_else(|| "invalid Morgan fingerprint".to_owned())?;
+        let scaffold_similarity = if candidate.bemis_murcko_scaffold.is_empty()
+            && reference.bemis_murcko_scaffold.is_empty()
+        {
+            1.0
+        } else if candidate.bemis_murcko_scaffold.is_empty()
+            || reference.bemis_murcko_scaffold.is_empty()
+        {
+            0.0
+        } else {
+            fingerprint_tanimoto(&candidate.scaffold_on_bits, &reference.scaffold_on_bits)
+                .ok_or_else(|| "invalid scaffold fingerprint".to_owned())?
+        };
+        if similarity > maximum_similarity {
+            maximum_similarity = similarity;
+            nearest_structure_id = entry.structure_id.clone();
+        }
+        maximum_scaffold_similarity = maximum_scaffold_similarity.max(scaffold_similarity);
+        exact_structure_match |=
+            candidate.canonical_structure_sha256 == entry.canonical_structure_sha256;
+    }
+    if !(0.0..=1.0).contains(&maximum_similarity)
+        || !(0.0..=1.0).contains(&maximum_scaffold_similarity)
+    {
+        return Err("novelty comparison produced an invalid similarity".into());
+    }
+    Ok(NoveltyComparison {
+        maximum_similarity,
+        maximum_scaffold_similarity,
+        nearest_structure_id,
+        exact_structure_match,
+    })
+}
+
+/// Pre-cache reference implementation kept only to prove the cached path is
+/// byte-identical (re-fingerprints the corpus per call, as the code did before).
+#[cfg(all(test, feature = "rdkit"))]
+fn compare_novelty_corpus_uncached(
     candidate: &MorganFingerprintV1,
     corpus: &NoveltyCorpusV1,
 ) -> Result<NoveltyComparison, String> {
@@ -1065,6 +1142,44 @@ fn compare_novelty_corpus(
         nearest_structure_id,
         exact_structure_match,
     })
+}
+
+#[cfg(all(test, feature = "rdkit"))]
+mod novelty_cache_identity_tests {
+    use super::*;
+    #[test]
+    fn cached_corpus_novelty_is_byte_identical_over_a_batch() {
+        let corpus = novelty_corpus().unwrap();
+        // Samples: the corpus's own structures (guaranteed valid) plus trivial
+        // molecules; any SMILES the backend rejects is skipped, never asserted.
+        let mut samples: Vec<String> = corpus
+            .entries
+            .iter()
+            .map(|e| e.canonical_isomeric_smiles.clone())
+            .collect();
+        for s in [
+            "CCO", "CCN", "CCCCO", "c1ccccc1", "NCCN", "OCC1CO1", "CC(C)CO",
+            "COC", "CCOCC", "OCCO", "CCCCCCN", "CC(C)(C)O",
+        ] {
+            samples.push(s.to_string());
+        }
+        let mut checked = 0usize;
+        for smi in &samples {
+            let Ok(cand) = morgan_fingerprint(smi) else { continue };
+            checked += 1;
+            let a = compare_novelty_corpus(&cand, corpus).unwrap();
+            let b = compare_novelty_corpus_uncached(&cand, corpus).unwrap();
+            assert_eq!(a.maximum_similarity.to_bits(), b.maximum_similarity.to_bits(), "sim {smi}");
+            assert_eq!(
+                a.maximum_scaffold_similarity.to_bits(),
+                b.maximum_scaffold_similarity.to_bits(),
+                "scaffold {smi}"
+            );
+            assert_eq!(a.nearest_structure_id, b.nearest_structure_id, "nearest {smi}");
+            assert_eq!(a.exact_structure_match, b.exact_structure_match, "exact {smi}");
+        }
+        assert!(checked >= 8, "expected to check several molecules, got {checked}");
+    }
 }
 
 fn property_result(candidate: &CandidateEnvelope, features: &FeatureSnapshot) -> ModuleResult {
