@@ -3,6 +3,7 @@ mod control;
 mod dashboard;
 mod phase0;
 mod phase1;
+mod showcase;
 
 use amphora_core::{
     apply_rank_deltas, collect_claim_locks, make_score_history, now_ms, rank_candidates,
@@ -23,6 +24,19 @@ use std::sync::atomic::{AtomicBool, Ordering};
 use std::sync::mpsc::Sender;
 use std::sync::Arc;
 use std::thread;
+
+#[derive(Clone, Copy, Debug, clap::ValueEnum)]
+enum ShowScale { S, M, L, Xl }
+
+#[derive(Args, Debug)]
+struct ShowcaseArgs {
+    #[arg(long, value_enum, default_value_t = ShowScale::M)]
+    scale: ShowScale,
+    #[arg(long)]
+    autopilot: bool,
+    #[arg(long)]
+    headless: bool,
+}
 
 #[derive(Parser, Debug)]
 #[command(
@@ -46,6 +60,8 @@ enum Command {
     Model(control::ModelArgs),
     Demo(RunArgs),
     Run(RunArgs),
+    /// Founder demo showcase TUI (Act 1 live solver + red-team board)
+    Showcase(ShowcaseArgs),
     Inspect(InspectArgs),
     Replay(ReplayArgs),
     Resume {
@@ -1132,6 +1148,15 @@ fn main() -> Result<()> {
         Command::Model(args) => control::run_model(&root, args),
         Command::Demo(args) => run(args, &root, true),
         Command::Run(args) => run(args, &root, false),
+        Command::Showcase(args) => {
+            let scale = match args.scale {
+                ShowScale::S => showcase::Scale::S,
+                ShowScale::M => showcase::Scale::M,
+                ShowScale::L => showcase::Scale::L,
+                ShowScale::Xl => showcase::Scale::Xl,
+            };
+            showcase::run_showcase(scale, args.autopilot, args.headless)
+        }
         Command::Inspect(args) => run(
             RunArgs {
                 candidate: Some(args.candidate),

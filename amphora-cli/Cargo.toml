@@ -24,6 +24,9 @@ amphora-engine = { path = "../amphora-engine" }
 amphora-ord-codec = { path = "../amphora-ord-codec" }
 amphora-rdkit-ffi = { path = "../amphora-rdkit-ffi" }
 amphora-tui = { path = "../amphora-tui" }
+amphora-solver-lab = { path = "../amphora-solver-lab" }
+ratatui = { workspace = true }
+crossterm = { workspace = true }
 anyhow.workspace = true
 base64.workspace = true
 clap.workspace = true

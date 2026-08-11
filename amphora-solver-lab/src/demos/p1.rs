@@ -498,3 +498,140 @@ pub fn diagnostic() -> Result<Value> {
     root.insert("pareto_status".into(), json!("OPTIMAL"));
     Ok(Value::Object(root))
 }
+
+// ============================================================================
+// Showcase (Act 1) live scaled grid. Reuses the EXACT constraint math and
+// pinned oracle facts as diagnostic() at a finer carrier-simplex resolution,
+// evaluated in parallel with a live progress counter. This is a real
+// computation over pinned data driving the live display; the SIGNED optimum and
+// three-method agreement come from diagnostic(). diagnostic() is untouched, so
+// the p1 signed receipt bytes are unchanged.
+// ============================================================================
+use rayon::prelude::*;
+use std::sync::atomic::{AtomicU64, Ordering};
+
+/// Result of a live scaled grid sweep for the Act 1 panel.
+pub struct ShowcaseGrid {
+    pub cells_total: u64,
+    pub cells_feasible: u64,
+    pub best_voc: f64,
+    pub best_red: f64,
+    pub pareto: Vec<(f32, f32)>,
+    pub solvent_keys: Vec<String>,
+    pub units: usize,
+    pub n_solvents: usize,
+}
+
+/// Read + extract the same solvents / DGEBA sphere as diagnostic(), fail-closed.
+fn showcase_blend_inputs() -> Result<(Vec<Solvent>, [f64; 3], f64)> {
+    let oracle = SourceOracle::pinned_default().map_err(|e| anyhow!("{e}"))?;
+    let facts = oracle
+        .read("ingredient_library_facts")
+        .map_err(|e| anyhow!("{e}"))?;
+    let entries = facts
+        .value
+        .get("entries")
+        .and_then(|v| v.as_object())
+        .context("facts.json has no entries object")?;
+    let mut names: BTreeSet<String> = BTreeSet::new();
+    for key in entries.keys() {
+        if let Some(rest) = key.strip_prefix("solvent.") {
+            if let Some((name, _prop)) = rest.split_once('.') {
+                names.insert(name.to_string());
+            }
+        }
+    }
+    let mut solvents: Vec<Solvent> = Vec::new();
+    for name in &names {
+        let density = entry_f64(entries, &format!("solvent.{name}.density"));
+        let flash = entry_f64(entries, &format!("solvent.{name}.flash_c"));
+        let hsp = entry_hsp(entries, &format!("solvent.{name}.hsp"));
+        if let (Some(d), Some(f), Some(h)) = (density, flash, hsp) {
+            solvents.push(Solvent {
+                key: name.clone(),
+                density_g_ml: d,
+                flash_c: f,
+                hsp: h,
+            });
+        }
+    }
+    if solvents.is_empty() {
+        anyhow::bail!("no fully-characterized solvents in pinned facts source");
+    }
+    let center = entry_hsp(entries, "binder.dgeba.hsp").context("binder.dgeba.hsp missing")?;
+    let radius =
+        entry_f64(entries, "binder.dgeba.hsp_radius").context("binder.dgeba.hsp_radius missing")?;
+    Ok((solvents, center, radius))
+}
+
+/// Enumerate the carrier simplex at `units` resolution, in parallel over the
+/// first-solvent count, evaluating every cell with the real constraints.
+/// `progress` receives the running count of cells evaluated (for the live UI).
+pub fn showcase_grid(units: usize, progress: &AtomicU64) -> Result<ShowcaseGrid> {
+    let (solvents, center, radius) = showcase_blend_inputs()?;
+    let n = solvents.len();
+    let phi = VS_HI;
+    let parts: Vec<(u64, u64, f64, f64, Vec<(f32, f32)>)> = (0..=units)
+        .into_par_iter()
+        .map(|k0| {
+            let mut total = 0u64;
+            let mut feas = 0u64;
+            let mut best_voc = f64::INFINITY;
+            let mut best_red = 0.0_f64;
+            let mut samples: Vec<(f32, f32)> = Vec::new();
+            let mut cur: Vec<usize> = Vec::with_capacity(n);
+            enumerate_compositions(n - 1, units - k0, &mut cur, &mut |rest: &[usize]| {
+                total += 1;
+                let mut x = [0.0f64; 8];
+                x[0] = k0 as f64 / units as f64;
+                for (i, &u) in rest.iter().enumerate() {
+                    x[i + 1] = u as f64 / units as f64;
+                }
+                let xs = &x[..n];
+                if is_feasible(phi, xs, &solvents, &center, radius) {
+                    feas += 1;
+                    let voc = voc_g_per_l(phi, xs, &solvents);
+                    let red = hansen_red(&blend_hsp(xs, &solvents), &center, radius);
+                    if voc < best_voc {
+                        best_voc = voc;
+                        best_red = red;
+                    }
+                    if samples.len() < 64 && total % 3 == 0 {
+                        samples.push((voc as f32, red as f32));
+                    }
+                }
+            });
+            progress.fetch_add(total, Ordering::Relaxed);
+            (total, feas, best_voc, best_red, samples)
+        })
+        .collect();
+
+    let mut cells_total = 0u64;
+    let mut cells_feasible = 0u64;
+    let mut best_voc = f64::INFINITY;
+    let mut best_red = 0.0_f64;
+    let mut pareto: Vec<(f32, f32)> = Vec::new();
+    for (t, f, bv, br, s) in parts {
+        cells_total += t;
+        cells_feasible += f;
+        if bv < best_voc {
+            best_voc = bv;
+            best_red = br;
+        }
+        pareto.extend(s);
+    }
+    if pareto.len() > 400 {
+        let step = (pareto.len() / 400).max(1);
+        pareto = pareto.iter().step_by(step).copied().collect();
+    }
+    Ok(ShowcaseGrid {
+        cells_total,
+        cells_feasible,
+        best_voc,
+        best_red,
+        pareto,
+        solvent_keys: solvents.iter().map(|s| s.key.clone()).collect(),
+        units,
+        n_solvents: n,
+    })
+}
