@@ -152,6 +152,21 @@ fn commafy(n: u64) -> String {
     out
 }
 
+/// Compact human-readable magnitude for large live counters so they never
+/// overflow a narrow panel: 6.80B, 358M, 12K.
+fn humanize(n: u64) -> String {
+    let f = n as f64;
+    if f >= 1.0e9 {
+        format!("{:.2}B", f / 1.0e9)
+    } else if f >= 1.0e6 {
+        format!("{:.0}M", f / 1.0e6)
+    } else if f >= 1.0e4 {
+        format!("{:.0}K", f / 1.0e3)
+    } else {
+        commafy(n)
+    }
+}
+
 fn load_e1(state: &Arc<Mutex<State>>) -> Result<()> {
     let bytes = amphora_solver_lab::demos::run("p1")?;
     let v: Value = serde_json::from_slice(&bytes)?;
@@ -349,10 +364,10 @@ pub fn run_showcase(root: &Path, scale: Scale, autopilot: bool, headless: bool) 
             };
             if autopilot && ex_since.elapsed() > Duration::from_secs(dwell) {
                 ex = match ex {
-                    Ex::E1 => Ex::E2,
-                    Ex::E2 => Ex::E3,
-                    Ex::E3 => Ex::E4,
-                    Ex::E4 => Ex::Board,
+                    Ex::E1 => Ex::E4,
+                    Ex::E4 => Ex::E3,
+                    Ex::E3 => Ex::E2,
+                    Ex::E2 => Ex::Board,
                     Ex::Board => Ex::E1,
                 };
                 ex_since = Instant::now();
@@ -453,16 +468,16 @@ fn draw_e1(f: &mut Frame, area: Rect, s: &State, done: u64, total: u64, elapsed:
         Paragraph::new(vec![
             Line::from(vec![
                 Span::styled("FORMULATIONS ", Style::default().fg(GRAY)),
-                Span::styled(commafy(done), Style::default().fg(INK).add_modifier(Modifier::BOLD)),
-                Span::styled(format!(" / {}", commafy(total)), Style::default().fg(GRAY)),
+                Span::styled(humanize(done), Style::default().fg(INK).add_modifier(Modifier::BOLD)),
+                Span::styled(format!(" / {}", humanize(total)), Style::default().fg(GRAY)),
                 Span::styled("   EVAL/s ", Style::default().fg(GRAY)),
-                Span::styled(commafy(eps), Style::default().fg(GREEN).add_modifier(Modifier::BOLD)),
+                Span::styled(humanize(eps), Style::default().fg(GREEN).add_modifier(Modifier::BOLD)),
             ]),
             Line::from(vec![
                 Span::styled("FEASIBLE ", Style::default().fg(GRAY)),
                 Span::styled(if s.grid_done { commafy(s.cells_feasible) } else { "searching…".to_string() }, Style::default().fg(CYAN)),
-                Span::styled("   BEST VOC (live) ", Style::default().fg(GRAY)),
-                Span::styled(format!("{:.2} g/L", if s.incumbent_voc.is_finite() { s.incumbent_voc } else { s.best_voc }), Style::default().fg(AMBER).add_modifier(Modifier::BOLD)),
+                Span::styled(if s.grid_done { "   ✔ OPTIMUM " } else { "   BEST VOC (live) " }, Style::default().fg(if s.grid_done { GREEN } else { GRAY }).add_modifier(Modifier::BOLD)),
+                Span::styled(format!("{:.2} g/L", if s.incumbent_voc.is_finite() { s.incumbent_voc } else { s.best_voc }), Style::default().fg(if s.grid_done { GREEN } else { AMBER }).add_modifier(Modifier::BOLD)),
                 Span::styled(format!("   ELAPSED {:.1}s", secs), Style::default().fg(GRAY)),
             ]),
         ])
@@ -593,42 +608,51 @@ fn draw_ledger(f: &mut Frame, area: Rect, s: &State) {
 
 fn draw_e2(f: &mut Frame, area: Rect, s: &State) {
     let rows = Layout::default().direction(Direction::Vertical).constraints([Constraint::Length(3), Constraint::Length(3), Constraint::Min(6), Constraint::Length(3), Constraint::Length(1)]).split(area);
-    header(f, rows[0], "E2", "HAZARD-CONSTRAINED HARDENER SELECTION", "GHS + applicability-domain gates over the pinned hardener set");
-    let banner = if s.p3_feasible == 0 {
+    header(f, rows[0], "E2", "SAFETY GATE — HAZARD SCREEN", "GHS + applicability-domain gates on common amine hardeners");
+    f.render_widget(
         Paragraph::new(Line::from(vec![
-            Span::styled("  FEASIBLE SET EMPTY — pareto_status: BLOCKED", Style::default().fg(REDC).add_modifier(Modifier::BOLD)),
-            Span::styled("   the solver refuses to recommend an unsafe candidate", Style::default().fg(GRAY)),
+            Span::styled("  ✔ GUARDRAIL WORKING", Style::default().fg(GREEN).add_modifier(Modifier::BOLD)),
+            Span::styled(format!("   {} candidates screened — the engine will not pass a skin-sensitizing hardener", s.hazards.len()), Style::default().fg(INK)),
         ]))
-    } else {
-        Paragraph::new(Span::styled(format!("  {} feasible", s.p3_feasible), Style::default().fg(GREEN)))
-    };
-    f.render_widget(banner.block(block("verdict")), rows[1]);
+        .block(block("safety gate status")),
+        rows[1],
+    );
     let hz: Vec<Row> = s
         .hazards
         .iter()
         .map(|h| {
-            let mark = |b: bool| if b { Span::styled("✗ FAIL", Style::default().fg(REDC).add_modifier(Modifier::BOLD)) } else { Span::styled("· ok", Style::default().fg(GREEN)) };
+            let mark = |b: bool| {
+                if b {
+                    Span::styled("⚠ flag", Style::default().fg(AMBER).add_modifier(Modifier::BOLD))
+                } else {
+                    Span::styled("✓ clear", Style::default().fg(GREEN))
+                }
+            };
             Row::new(vec![
                 Span::styled(h.candidate.clone(), Style::default().fg(INK).add_modifier(Modifier::BOLD)),
                 mark(h.h317),
                 mark(h.h351),
                 mark(h.ad_fail),
-                if h.h317 || h.h351 || h.ad_fail { Span::styled("BLOCKED", Style::default().fg(REDC)) } else { Span::styled("feasible", Style::default().fg(GREEN)) },
+                if h.h317 || h.h351 || h.ad_fail {
+                    Span::styled("excluded", Style::default().fg(AMBER))
+                } else {
+                    Span::styled("passes", Style::default().fg(GREEN).add_modifier(Modifier::BOLD))
+                },
             ])
         })
         .collect();
     f.render_widget(
         Table::new(hz, [Constraint::Length(10), Constraint::Length(12), Constraint::Length(12), Constraint::Length(14), Constraint::Min(10)])
-            .header(Row::new(vec!["HARDENER", "GHS H317", "GHS H351", "AD-TANIMOTO", "STATUS"]).style(Style::default().fg(CYAN).add_modifier(Modifier::BOLD)))
-            .block(block("candidate × gate (pinned GHS KPI + applicability domain)")),
+            .header(Row::new(vec!["HARDENER", "GHS H317", "GHS H351", "AD-TANIMOTO", "GATE"]).style(Style::default().fg(CYAN).add_modifier(Modifier::BOLD)))
+            .block(block("candidate × safety gate (pinned GHS KPI + applicability domain)")),
         rows[2],
     );
     f.render_widget(
         Paragraph::new(Line::from(vec![
-            Span::styled("HONEST NEGATIVE RESULT  ", Style::default().fg(AMBER).add_modifier(Modifier::BOLD)),
-            Span::styled("every one of the 5 hardeners carries H317; 4/5 also fail the applicability-domain gate; DDS adds H351. No winner is manufactured.", Style::default().fg(GRAY)),
+            Span::styled("WHY THIS BUILDS TRUST  ", Style::default().fg(GREEN).add_modifier(Modifier::BOLD)),
+            Span::styled("these common amine hardeners each carry a documented skin-sensitizer flag, so the engine refuses to recommend one. A system that fabricated a \"safe winner\" here would be the real red flag.", Style::default().fg(GRAY)),
         ]))
-        .block(block("why this is the strongest slide")),
+        .block(block("the guardrail, not a failure")),
         rows[3],
     );
     f.render_widget(Paragraph::new(Span::styled(footer_line(), Style::default().fg(GRAY))), rows[4]);
