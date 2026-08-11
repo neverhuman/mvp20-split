@@ -8,7 +8,7 @@ use amphora_engine::{EnginePool, ScoreProgress};
 use anyhow::{anyhow, Result};
 use rayon::prelude::*;
 use serde_json::{json, Value};
-use std::collections::HashSet;
+use std::collections::{BTreeMap, HashSet};
 use std::path::Path;
 use std::sync::atomic::{AtomicU64, Ordering};
 use std::time::Instant;
@@ -118,6 +118,8 @@ pub struct ScreenOutcome {
     pub elapsed_s: f64,
     pub compounds_per_s: f64,
     pub exemplar: Exemplar,
+    /// Real per-module invocation tally over the batch: (module_id, scored, total).
+    pub module_scored: Vec<(String, u64, u64)>,
 }
 
 /// Full-score throughput: build one CandidateEnvelope per distinct compound and
@@ -149,6 +151,7 @@ pub fn run_screen(
     let mut distinct: HashSet<String> = HashSet::new();
     let mut best_hash: Option<String> = None;
     let mut exemplar = Exemplar::default();
+    let mut modstat: BTreeMap<String, (u64, u64)> = BTreeMap::new();
     for row in &results {
         match row {
             Ok((value, _)) => {
@@ -171,6 +174,15 @@ pub fn run_screen(
                         e.get("usable_by_optimizer").and_then(Value::as_bool) == Some(true)
                     }) {
                         optimizer_admissible += 1;
+                    }
+                    for e in envs {
+                        if let Some(mid) = e.get("module_id").and_then(Value::as_str) {
+                            let ent = modstat.entry(mid.to_string()).or_insert((0, 0));
+                            ent.1 += 1;
+                            if e.get("status").and_then(Value::as_str) == Some("SCORED") {
+                                ent.0 += 1;
+                            }
+                        }
                     }
                 }
                 // Admissible-exemplar FILTER (not a sort): keep only compounds
@@ -229,6 +241,7 @@ pub fn run_screen(
         elapsed_s: secs,
         compounds_per_s: scored_ok as f64 / secs,
         exemplar,
+        module_scored: modstat.into_iter().map(|(k, (sc, tot))| (k, sc, tot)).collect(),
     })
 }
 

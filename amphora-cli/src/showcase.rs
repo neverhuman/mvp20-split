@@ -65,6 +65,7 @@ enum Ex {
     E2,
     E3,
     E4,
+    E5,
     Board,
 }
 
@@ -86,6 +87,15 @@ struct Hazard {
     ad_fail: bool,
 }
 
+#[derive(Default, Clone)]
+struct ModRow {
+    name: String,
+    readiness: String,
+    authority: String,
+    lane: String,
+    active: bool,
+}
+
 #[derive(Default)]
 struct State {
     // E1
@@ -98,10 +108,10 @@ struct State {
     opt_flash: f64,
     opt_mak: f64,
     agree: Agreement,
-    pareto: Vec<(f64, f64)>,
     live_scatter: Vec<(f64, f64)>,
     incumbent_voc: f64,
     incumbent_red: f64,
+    incumbent_blend: Vec<(String, f64)>,
     convergence: Vec<(f64, f64)>,
     n_solvents: usize,
     excluded: usize,
@@ -125,6 +135,9 @@ struct State {
     screen_admissible: u64,
     screen_start_s: f64,
     screen_ex: screen::Exemplar,
+    screen_modules: Vec<(String, u64, u64)>,
+    p4_solved_cells: Vec<bool>,
+    modules: Vec<ModRow>,
 }
 
 fn binom(n: u128, k: u128) -> u128 {
@@ -154,6 +167,20 @@ fn commafy(n: u64) -> String {
 
 /// Compact human-readable magnitude for large live counters so they never
 /// overflow a narrow panel: 6.80B, 358M, 12K.
+fn blend_str(b: &[(String, f64)]) -> String {
+    if b.is_empty() {
+        return "searching…".to_string();
+    }
+    let mut parts: Vec<(String, f64)> = b.to_vec();
+    parts.sort_by(|a, c| c.1.partial_cmp(&a.1).unwrap_or(std::cmp::Ordering::Equal));
+    parts
+        .iter()
+        .take(3)
+        .map(|(k, v)| format!("{} {:.0}%", k.to_uppercase(), v * 100.0))
+        .collect::<Vec<_>>()
+        .join(" · ")
+}
+
 fn humanize(n: u64) -> String {
     let f = n as f64;
     if f >= 1.0e9 {
@@ -172,17 +199,6 @@ fn load_e1(state: &Arc<Mutex<State>>) -> Result<()> {
     let v: Value = serde_json::from_slice(&bytes)?;
     let ma = v.pointer("/results/method_agreement").ok_or_else(|| anyhow!("no agreement"))?;
     let ob = v.pointer("/results/optimal_blend").ok_or_else(|| anyhow!("no optimum"))?;
-    let mut pareto = Vec::new();
-    if let Some(arr) = v.pointer("/results/pareto_slice_voc_vs_red").and_then(Value::as_array) {
-        for row in arr {
-            if let (Some(x), Some(y)) = (
-                row.get("voc_g_per_l").and_then(Value::as_f64),
-                row.get("red").and_then(Value::as_f64),
-            ) {
-                pareto.push((x, y));
-            }
-        }
-    }
     let excluded = v
         .pointer("/problem/excluded_ingredients")
         .and_then(Value::as_array)
@@ -201,7 +217,6 @@ fn load_e1(state: &Arc<Mutex<State>>) -> Result<()> {
     s.best_red = ob.get("hansen_red_vs_dgeba").and_then(Value::as_f64).unwrap_or(0.0);
     s.opt_flash = ob.get("min_flash_c_on_support").and_then(Value::as_f64).unwrap_or(0.0);
     s.opt_mak = ob.pointer("/composition_volume_fraction_of_carrier/mak").and_then(Value::as_f64).unwrap_or(0.0);
-    s.pareto = pareto;
     s.excluded = excluded;
     s.ready = true;
     Ok(())
@@ -252,11 +267,52 @@ fn load_e3(state: &Arc<Mutex<State>>) {
         Some(r) => r,
         None => return,
     };
+    let solved_cells: Vec<bool> = r
+        .get("cells")
+        .and_then(Value::as_array)
+        .map(|a| {
+            a.iter()
+                .map(|c| c.get("status").and_then(Value::as_str) == Some("SOLVED"))
+                .collect()
+        })
+        .unwrap_or_default();
     let mut s = state.lock().unwrap();
+    s.p4_solved_cells = solved_cells;
     s.p4_solved = r.get("n_solved").and_then(Value::as_i64).unwrap_or(0);
     s.p4_infeasible = r.get("n_infeasible").and_then(Value::as_i64).unwrap_or(0);
     s.p4_cells = r.get("cells").and_then(Value::as_array).map(|a| a.len()).unwrap_or(0);
     s.p4_status = v.pointer("/pareto_status").and_then(Value::as_str).unwrap_or("").to_string();
+}
+
+fn load_modules(state: &Arc<Mutex<State>>) {
+    const ACTIVE: [&str; 4] = [
+        "amphora-molecule-property",
+        "amphora-molecule-role-ranker",
+        "amphora-molecule-novelty",
+        "amphora-molecule-design-gate",
+    ];
+    let candidates = [
+        "module-manifest.json".to_string(),
+        format!("{}/../module-manifest.json", env!("CARGO_MANIFEST_DIR")),
+    ];
+    let Some(bytes) = candidates.iter().find_map(|p| std::fs::read(p).ok()) else { return };
+    let Ok(v) = serde_json::from_slice::<Value>(&bytes) else { return };
+    let Some(mods) = v.get("modules").and_then(Value::as_array) else { return };
+    let rows: Vec<ModRow> = mods
+        .iter()
+        .map(|m| {
+            let name = m.get("project").and_then(Value::as_str).unwrap_or("?").to_string();
+            let active = ACTIVE.contains(&name.as_str());
+            ModRow {
+                active,
+                readiness: m.get("readiness").and_then(Value::as_str).unwrap_or("").to_string(),
+                authority: m.get("authority_ceiling").and_then(Value::as_str).unwrap_or("").to_string(),
+                lane: m.get("lane").and_then(Value::as_str).unwrap_or("").to_string(),
+                name,
+            }
+        })
+        .collect();
+    state.lock().unwrap().modules = rows;
 }
 
 pub fn run_showcase(root: &Path, scale: Scale, autopilot: bool, headless: bool) -> Result<()> {
@@ -278,6 +334,7 @@ pub fn run_showcase(root: &Path, scale: Scale, autopilot: bool, headless: bool) 
             let _ = load_e1(&state);
             load_e2(&state);
             load_e3(&state);
+            load_modules(&state);
             if let Ok(g) = showcase_grid(units, &progress, Some(&grid_tx)) {
                 let mut s = state.lock().unwrap();
                 s.cells_total = g.cells_total;
@@ -317,7 +374,7 @@ pub fn run_showcase(root: &Path, scale: Scale, autopilot: bool, headless: bool) 
     let res = (|| -> Result<()> {
         loop {
             // lazily launch the E4 screen when it's first shown (keeps it live)
-            if ex == Ex::E4 && !screen_started {
+            if matches!(ex, Ex::E4 | Ex::E5) && !screen_started {
                 screen_started = true;
                 launch_screen(&root, &state, &screen_prog, started.elapsed().as_secs_f64());
             }
@@ -332,6 +389,7 @@ pub fn run_showcase(root: &Path, scale: Scale, autopilot: bool, headless: bool) 
                 if d.chunk_best_voc < st.incumbent_voc {
                     st.incumbent_voc = d.chunk_best_voc;
                     st.incumbent_red = d.chunk_best_red;
+                    st.incumbent_blend = d.chunk_best_blend;
                     st.convergence.push((cells_seen as f64, d.chunk_best_voc));
                 }
             }
@@ -350,7 +408,8 @@ pub fn run_showcase(root: &Path, scale: Scale, autopilot: bool, headless: bool) 
                         KeyCode::Char('2') => ex = Ex::E2,
                         KeyCode::Char('3') => ex = Ex::E3,
                         KeyCode::Char('4') => ex = Ex::E4,
-                        KeyCode::Char('5') => ex = Ex::Board,
+                        KeyCode::Char('5') => ex = Ex::E5,
+                        KeyCode::Char('6') => ex = Ex::Board,
                         KeyCode::Char(' ') => ex_since = Instant::now(),
                         _ => {}
                     }
@@ -359,13 +418,15 @@ pub fn run_showcase(root: &Path, scale: Scale, autopilot: bool, headless: bool) 
             let dwell = match ex {
                 Ex::E1 => 26,
                 Ex::E4 => 22,
+                Ex::E5 => 16,
                 Ex::Board => 14,
                 _ => 11,
             };
             if autopilot && ex_since.elapsed() > Duration::from_secs(dwell) {
                 ex = match ex {
                     Ex::E1 => Ex::E4,
-                    Ex::E4 => Ex::E3,
+                    Ex::E4 => Ex::E5,
+                    Ex::E5 => Ex::E3,
                     Ex::E3 => Ex::E2,
                     Ex::E2 => Ex::Board,
                     Ex::Board => Ex::E1,
@@ -412,6 +473,7 @@ fn launch_screen(root: &Path, state: &Arc<Mutex<State>>, prog: &Arc<AtomicU64>, 
             s.screen_cps = o.compounds_per_s;
             s.screen_admissible = o.optimizer_admissible as u64;
             s.screen_ex = o.exemplar;
+            s.screen_modules = o.module_scored;
         }
         s.screen_running = false;
         s.screen_done = true;
@@ -440,7 +502,7 @@ fn header(f: &mut Frame, area: Rect, tag: &str, title: &str, sub: &str) {
 }
 
 fn footer_line() -> &'static str {
-    "  [1] solver  [2] hazard  [3] factorial  [4] compounds/sec  [5] red-team board  ·  [space] hold  [q] quit"
+    "  [1] solver  [2] hazard  [3] factorial  [4] compounds/sec  [5] submodels  [6] board  ·  [space] hold  [q] quit"
 }
 
 fn draw(f: &mut Frame, s: &State, ex: Ex, done: u64, total: u64, sdone: u64, elapsed: Duration) {
@@ -450,6 +512,7 @@ fn draw(f: &mut Frame, s: &State, ex: Ex, done: u64, total: u64, sdone: u64, ela
         Ex::E2 => draw_e2(f, f.area(), s),
         Ex::E3 => draw_e3(f, f.area(), s),
         Ex::E4 => draw_e4(f, f.area(), s, sdone, elapsed),
+        Ex::E5 => draw_e5(f, f.area(), s, sdone),
         Ex::Board => draw_board(f, f.area()),
     }
 }
@@ -478,6 +541,8 @@ fn draw_e1(f: &mut Frame, area: Rect, s: &State, done: u64, total: u64, elapsed:
                 Span::styled(if s.grid_done { commafy(s.cells_feasible) } else { "searching…".to_string() }, Style::default().fg(CYAN)),
                 Span::styled(if s.grid_done { "   ✔ OPTIMUM " } else { "   BEST VOC (live) " }, Style::default().fg(if s.grid_done { GREEN } else { GRAY }).add_modifier(Modifier::BOLD)),
                 Span::styled(format!("{:.2} g/L", if s.incumbent_voc.is_finite() { s.incumbent_voc } else { s.best_voc }), Style::default().fg(if s.grid_done { GREEN } else { AMBER }).add_modifier(Modifier::BOLD)),
+                Span::styled("   BEST FORMULA ", Style::default().fg(GRAY)),
+                Span::styled(blend_str(&s.incumbent_blend), Style::default().fg(CYAN).add_modifier(Modifier::BOLD)),
                 Span::styled(format!("   ELAPSED {:.1}s", secs), Style::default().fg(GRAY)),
             ]),
         ])
@@ -503,28 +568,27 @@ fn draw_e1(f: &mut Frame, area: Rect, s: &State, done: u64, total: u64, elapsed:
 }
 
 fn draw_pareto(f: &mut Frame, area: Rect, s: &State) {
-    if s.pareto.is_empty() && s.live_scatter.is_empty() {
-        f.render_widget(Paragraph::new(Span::styled("computing pinned Pareto front…", Style::default().fg(GRAY))).block(block("Pareto: VOC vs Hansen RED")), area);
+    let title = "Pareto: VOC (g/L) vs Hansen RED — live feasible points";
+    if s.live_scatter.is_empty() {
+        f.render_widget(
+            Paragraph::new(Span::styled("searching for feasible blends…", Style::default().fg(GRAY))).block(block(title)),
+            area,
+        );
         return;
     }
-    let basis: &Vec<(f64, f64)> = if !s.pareto.is_empty() { &s.pareto } else { &s.live_scatter };
-    let xs: Vec<f64> = basis.iter().map(|p| p.0).collect();
-    let ys: Vec<f64> = basis.iter().map(|p| p.1).collect();
-    let xlo = (xs.iter().cloned().fold(f64::INFINITY, f64::min) - 5.0).floor();
-    let xhi = (xs.iter().cloned().fold(f64::NEG_INFINITY, f64::max) + 5.0).ceil();
-    let ylo = (ys.iter().cloned().fold(f64::INFINITY, f64::min) - 0.05).max(0.0);
-    let yhi = ys.iter().cloned().fold(f64::NEG_INFINITY, f64::max) + 0.05;
+    // Axes are the constraint domain (VOC cap 340, feasible RED band) so the
+    // frame is stable while real grid-discovered points fill it in live.
+    let (xlo, xhi, ylo, yhi) = (255.0_f64, 340.0_f64, 0.40_f64, 0.72_f64);
     let inc_voc = if s.incumbent_voc.is_finite() { s.incumbent_voc } else { s.best_voc };
     let inc_red = if s.incumbent_voc.is_finite() { s.incumbent_red } else { s.best_red };
     let opt = vec![(inc_voc, inc_red)];
     let datasets = vec![
-        Dataset::default().name("signed reference front").marker(symbols::Marker::Braille).graph_type(GraphType::Scatter).style(Style::default().fg(GRAY)).data(&s.pareto),
-        Dataset::default().name("feasible (live)").marker(symbols::Marker::Braille).graph_type(GraphType::Scatter).style(Style::default().fg(CYAN)).data(&s.live_scatter),
+        Dataset::default().name("feasible blends (live)").marker(symbols::Marker::Braille).graph_type(GraphType::Scatter).style(Style::default().fg(CYAN)).data(&s.live_scatter),
         Dataset::default().name("incumbent ★ (live)").marker(symbols::Marker::Braille).graph_type(GraphType::Scatter).style(Style::default().fg(MAGENTA).add_modifier(Modifier::BOLD)).data(&opt),
     ];
     f.render_widget(
         Chart::new(datasets)
-            .block(block("Pareto: VOC (g/L) vs Hansen RED"))
+            .block(block(title))
             .x_axis(Axis::default().style(Style::default().fg(GRAY)).bounds([xlo, xhi]).labels(vec![Span::raw(format!("{xlo:.0}")), Span::raw(format!("{:.0}", (xlo + xhi) / 2.0)), Span::raw(format!("{xhi:.0}"))]))
             .y_axis(Axis::default().style(Style::default().fg(GRAY)).bounds([ylo, yhi]).labels(vec![Span::raw(format!("{ylo:.2}")), Span::raw(format!("{:.2}", (ylo + yhi) / 2.0)), Span::raw(format!("{yhi:.2}"))])),
         area,
@@ -683,8 +747,13 @@ fn draw_e3(f: &mut Frame, area: Rect, s: &State) {
         let cols = Layout::default().direction(Direction::Horizontal).constraints([Constraint::Ratio(1, 4); 4]).split(grid_rows[r]);
         for c in 0..4 {
             let idx = r * 4 + c;
-            let solved = [0, 1, 4, 5, 8, 9, 12, 13].contains(&idx);
-            let (col, txt) = if solved { (GREEN, "SOLVED") } else { (AMBER, "INFEASIBLE") };
+            let (col, txt) = if s.p4_solved_cells.is_empty() {
+                (GRAY, "…")
+            } else if s.p4_solved_cells.get(idx).copied().unwrap_or(false) {
+                (GREEN, "SOLVED")
+            } else {
+                (AMBER, "INFEASIBLE")
+            };
             f.render_widget(
                 Paragraph::new(vec![
                     Line::from(Span::styled(format!("cell {idx}"), Style::default().fg(INK))),
@@ -734,12 +803,19 @@ fn draw_e4(f: &mut Frame, area: Rect, s: &State, sdone: u64, elapsed: Duration) 
         Gauge::default().block(block("screen progress")).gauge_style(Style::default().fg(if s.screen_done { GREEN } else { CYAN }).bg(Color::Rgb(30, 41, 59))).percent(pct.min(100)).label(Span::styled(format!("{pct}%"), Style::default().fg(INK).add_modifier(Modifier::BOLD))),
         gcol[0],
     );
+    let scored_live = s.screen_scored.max(sdone);
     f.render_widget(
         Paragraph::new(vec![
-            Line::from(Span::styled("GATE FUNNEL", Style::default().fg(CYAN).add_modifier(Modifier::BOLD))),
-            Line::from(Span::styled("enumerated → RDKit-valid → normalized →", Style::default().fg(GRAY))),
-            Line::from(Span::styled("property/role/novelty/design-gate → distinct", Style::default().fg(GRAY))),
-        ]).block(block("pipeline")),
+            Line::from(Span::styled("GATE FUNNEL (live)", Style::default().fg(CYAN).add_modifier(Modifier::BOLD))),
+            Line::from(vec![
+                Span::styled("enum ", Style::default().fg(GRAY)),
+                Span::styled(commafy(s.screen_total), Style::default().fg(INK)),
+                Span::styled(" → scored ", Style::default().fg(GRAY)),
+                Span::styled(commafy(scored_live), Style::default().fg(GREEN)),
+                Span::styled(" → distinct ", Style::default().fg(GRAY)),
+                Span::styled(commafy(s.screen_distinct), Style::default().fg(CYAN)),
+            ]),
+        ]).block(block("pipeline (real counts)")),
         gcol[1],
     );
     exemplar_card(f, midrow[1], &s.screen_ex);
@@ -805,6 +881,52 @@ fn exemplar_card(f: &mut Frame, area: Rect, e: &screen::Exemplar) {
         .block(block("admissible exemplar — passes ALL hard design gates (AUDIT_ONLY, not ranked)")),
         area,
     );
+}
+
+fn draw_e5(f: &mut Frame, area: Rect, s: &State, sdone: u64) {
+    let rows = Layout::default().direction(Direction::Vertical).constraints([Constraint::Length(3), Constraint::Length(3), Constraint::Min(6), Constraint::Length(1)]).split(area);
+    let active = s.modules.iter().filter(|m| m.active).count();
+    header(f, rows[0], "E5", "ALL SUBMODELS (live)", "the engine's module registry; the molecule lane invokes its active set per compound");
+    f.render_widget(
+        Paragraph::new(Line::from(vec![
+            Span::styled(format!("  {} registered modules", s.modules.len()), Style::default().fg(INK).add_modifier(Modifier::BOLD)),
+            Span::styled(format!("   ·   {active} active in the molecule lane (E4 screen)", ), Style::default().fg(GREEN)),
+            Span::styled("   ·   per-module SCORED counts below are real score-envelope results", Style::default().fg(GRAY)),
+        ]))
+        .block(block("registry")),
+        rows[1],
+    );
+    let find = |name: &str| s.screen_modules.iter().find(|(m, _, _)| m == name).map(|(_, sc, tot)| (*sc, *tot));
+    let mr: Vec<Row> = s
+        .modules
+        .iter()
+        .map(|m| {
+            let activity = if m.active {
+                match find(&m.name) {
+                    Some((sc, tot)) => Span::styled(format!("SCORED {}/{}", commafy(sc), commafy(tot)), Style::default().fg(GREEN).add_modifier(Modifier::BOLD)),
+                    None if s.screen_running => Span::styled(format!("processing {}", commafy(sdone)), Style::default().fg(CYAN).add_modifier(Modifier::BOLD)),
+                    None => Span::styled("idle (open [4]/[5])", Style::default().fg(AMBER)),
+                }
+            } else {
+                Span::styled("dormant (other lane)", Style::default().fg(GRAY))
+            };
+            let dot = if m.active { Span::styled("● ", Style::default().fg(GREEN)) } else { Span::styled("○ ", Style::default().fg(EDGE)) };
+            Row::new(vec![
+                Line::from(vec![dot, Span::styled(m.name.clone(), Style::default().fg(INK))]),
+                Line::from(Span::styled(m.lane.clone(), Style::default().fg(GRAY))),
+                Line::from(Span::styled(m.readiness.clone(), Style::default().fg(AMBER))),
+                Line::from(Span::styled(m.authority.clone(), Style::default().fg(GRAY))),
+                Line::from(activity),
+            ])
+        })
+        .collect();
+    f.render_widget(
+        Table::new(mr, [Constraint::Length(34), Constraint::Length(14), Constraint::Length(13), Constraint::Length(20), Constraint::Min(18)])
+            .header(Row::new(vec!["MODULE", "LANE", "READINESS", "AUTHORITY", "LIVE ACTIVITY"]).style(Style::default().fg(CYAN).add_modifier(Modifier::BOLD)))
+            .block(block("registry × live activity — SCORED counts are real per-module envelope results")),
+        rows[2],
+    );
+    f.render_widget(Paragraph::new(Span::styled(footer_line(), Style::default().fg(GRAY))), rows[3]);
 }
 
 // ---- Board: red-team scoreboard + module board + benchkit strip ----------

@@ -518,6 +518,7 @@ pub struct GridDelta {
     pub chunk_best_voc: f64,
     pub chunk_best_red: f64,
     pub new_samples: Vec<(f32, f32)>,
+    pub chunk_best_blend: Vec<(String, f64)>,
 }
 
 pub struct ShowcaseGrid {
@@ -591,6 +592,7 @@ pub fn showcase_grid(
             let mut feas = 0u64;
             let mut best_voc = f64::INFINITY;
             let mut best_red = 0.0_f64;
+            let mut best_blend: Vec<(String, f64)> = Vec::new();
             let mut samples: Vec<(f32, f32)> = Vec::new();
             let mut cur: Vec<usize> = Vec::with_capacity(n);
             enumerate_compositions(n - 1, units - k0, &mut cur, &mut |rest: &[usize]| {
@@ -608,6 +610,12 @@ pub fn showcase_grid(
                     if voc < best_voc {
                         best_voc = voc;
                         best_red = red;
+                        best_blend = solvents
+                            .iter()
+                            .zip(xs.iter())
+                            .filter(|(_, &x)| x > 1e-9)
+                            .map(|(sv, &x)| (sv.key.clone(), x))
+                            .collect();
                     }
                     if samples.len() < 64 && total % 3 == 0 {
                         samples.push((voc as f32, red as f32));
@@ -623,6 +631,7 @@ pub fn showcase_grid(
                     chunk_best_voc: best_voc,
                     chunk_best_red: best_red,
                     new_samples: samples.clone(),
+                    chunk_best_blend: best_blend.clone(),
                 });
             }
             (total, feas, best_voc, best_red, samples)
