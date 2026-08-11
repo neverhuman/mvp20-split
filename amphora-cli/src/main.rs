@@ -254,14 +254,12 @@ fn record_from(
         .and_then(Value::as_str)
         .unwrap_or("unknown")
         .to_string();
-    let normalized = result
-        .pointer("/candidate/normalized_molecule")
-        .or_else(|| result.pointer("/candidate/normalized_formulation"));
-    let hash = normalized
-        .and_then(|v| {
-            v.get("canonical_structure_hash")
-                .or_else(|| v.get("formula_hash"))
-        })
+    // T-01B: read only host-owned identity paths, never a caller-echoed key.
+    // Molecule identity lives under the host-written `normalization` object;
+    // formulation identity is the host-overwritten top-level `formula_hash`.
+    let hash = result
+        .pointer("/candidate/normalized_molecule/normalization/canonical_structure_hash")
+        .or_else(|| result.pointer("/candidate/normalized_formulation/formula_hash"))
         .and_then(Value::as_str)
         .map(str::to_string);
     let parent_ids = candidate

@@ -1110,6 +1110,15 @@ fn raw_sha256(bytes: &[u8]) -> String {
 
 fn normalized_candidate(candidate: &CandidateEnvelope) -> Result<Value> {
     let mut output = candidate.value().clone();
+    // T-01B: strip host-reserved identity keys from the echoed candidate so a
+    // caller-supplied top-level `canonical_structure_hash`/`formula_hash` can
+    // never survive into the result and be read back as a host-derived value.
+    // Clean candidates never carry these input keys, so their echo is unchanged;
+    // the formulation path re-inserts a host-computed `formula_hash` below.
+    if let Some(map) = output.as_object_mut() {
+        map.remove("canonical_structure_hash");
+        map.remove("formula_hash");
+    }
     output["input_kind"] = Value::String(candidate.candidate_type().into());
     output["input_hash"] = Value::String(candidate.contract_hash_v1().into());
     output["original_bytes_sha256"] = Value::String(candidate.original_bytes_sha256().into());
